@@ -2,705 +2,724 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>中秋夜爬泰山 · 苏州园区出发 | 2026 双方案攻略</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>莫干山·国庆慢游 | 苏州园区出发</title>
 <style>
 :root{
-  --night:#0b1626; --night2:#12203a; --ink:#1a2438;
-  --gold:#f4d06f; --gold2:#e8b04b; --sun:#ff8c42; --sunrise:#ff6b35;
-  --paper:#f7f3e8; --mist:#cfd8e3; --line:rgba(244,208,111,.25);
-  --card:#ffffff;
+  --ink:#0d1a14; --ink2:#14261d; --ink3:#1d3527;
+  --bamboo:#5fae7e; --bamboo2:#8fd0a8; --jade:#a8d8b9;
+  --gold:#e8b84b; --gold2:#f5d78e;
+  --paper:#eef5f0; --muted:#9fb8a9;
+  --line:rgba(143,208,168,.18);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--night);color:var(--paper);line-height:1.75;overflow-x:hidden}
-.serif{font-family:"Songti SC","STSong","SimSun",serif}
+body{
+  background:var(--ink); color:var(--paper);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.75; overflow-x:hidden;
+}
+a{color:var(--bamboo2);text-decoration:none}
 img{display:block;max-width:100%}
-a{color:var(--gold);text-decoration:none}
-
-/* ===== HERO ===== */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(1.1);transform:scale(1.05);animation:heroZoom 20s ease-in-out infinite alternate}
-@keyframes heroZoom{to{transform:scale(1.15)}}
-.hero .mask{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,38,.35) 0%,rgba(11,22,38,.15) 40%,rgba(11,22,38,.88) 88%,var(--night) 100%)}
-.hero-content{position:relative;z-index:2;padding:0 20px;max-width:860px}
-.hero .moon{font-size:44px;filter:drop-shadow(0 0 18px rgba(244,208,111,.8));animation:float 5s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-10px)}}
-.hero h1{font-size:clamp(30px,6vw,58px);letter-spacing:.12em;margin:18px 0 6px;text-shadow:0 2px 30px rgba(0,0,0,.6)}
-.hero h1 .gold{color:var(--gold)}
-.hero .sub{font-size:clamp(14px,2.4vw,18px);letter-spacing:.35em;color:var(--mist);margin-bottom:28px}
-.hero .tagchips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:30px}
-.hero .chip{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:13px;color:var(--gold);background:rgba(18,32,58,.55);backdrop-filter:blur(6px)}
-.countdown{display:flex;gap:14px;justify-content:center;margin-bottom:34px}
-.cd-box{background:rgba(11,22,38,.72);border:1px solid var(--line);border-radius:14px;padding:12px 10px;min-width:74px;backdrop-filter:blur(8px)}
-.cd-box b{font-size:clamp(22px,4vw,32px);color:var(--gold);display:block;font-variant-numeric:tabular-nums}
-.cd-box span{font-size:11px;color:var(--mist);letter-spacing:.2em}
-.hero .scroll-hint{position:absolute;bottom:88px;left:50%;transform:translateX(-50%);color:var(--mist);font-size:12px;letter-spacing:.3em;animation:hint 2s infinite}
-@keyframes hint{50%{transform:translate(-50%,8px);opacity:.4}}
-
-/* ===== NAV ===== */
-nav{position:sticky;top:0;z-index:50;background:rgba(11,22,38,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav .wrap{max-width:1080px;margin:0 auto;display:flex;overflow-x:auto;padding:0 16px;scrollbar-width:none}
-nav .wrap::-webkit-scrollbar{display:none}
-nav a{flex:none;padding:14px 18px;font-size:14px;color:var(--mist);border-bottom:2px solid transparent;transition:.25s}
-nav a:hover,nav a.act{color:var(--gold);border-color:var(--gold)}
-
-/* ===== LAYOUT ===== */
-section{max-width:1080px;margin:0 auto;padding:70px 20px 30px}
-.sec-head{text-align:center;margin-bottom:44px}
-.sec-head .kicker{color:var(--gold);font-size:13px;letter-spacing:.5em;display:block;margin-bottom:10px}
-.sec-head h2{font-size:clamp(24px,4.5vw,36px);letter-spacing:.1em}
-.sec-head p{color:var(--mist);font-size:14px;margin-top:10px}
-
-/* ===== 方案切换 ===== */
-.plan-switch{display:flex;justify-content:center;gap:12px;margin-bottom:36px;flex-wrap:wrap}
-.plan-switch button{border:1px solid var(--line);background:transparent;color:var(--mist);padding:12px 28px;border-radius:999px;font-size:15px;cursor:pointer;transition:.3s;letter-spacing:.1em}
-.plan-switch button.on{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);font-weight:700;border-color:transparent;box-shadow:0 6px 24px rgba(232,176,75,.35)}
-.plan-box{display:none;animation:fadeUp .5s ease}
-.plan-box.show{display:block}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-
-/* 方案头卡 */
-.plan-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--night2)}
-.plan-hero .txt{padding:34px 32px}
-.plan-hero h3{font-size:24px;letter-spacing:.08em;margin-bottom:6px}
-.plan-hero h3 em{font-style:normal;color:var(--gold)}
-.plan-hero .who{color:var(--sun);font-size:13px;margin-bottom:14px}
-.plan-hero p{font-size:14.5px;color:var(--mist)}
-.plan-hero .pics{position:relative;min-height:260px}
-.plan-hero .pics img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.plan-hero .pics .cap{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;font-size:12px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))}
-@media(max-width:760px){.plan-hero{grid-template-columns:1fr}.plan-hero .pics{min-height:200px}}
-
-/* 时间轴 */
-.tl{margin-top:38px;position:relative;padding-left:26px}
-.tl:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),transparent)}
-.tl-item{position:relative;margin-bottom:14px;background:var(--night2);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.3s}
-.tl-item:before{content:"";position:absolute;left:-24px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px rgba(244,208,111,.7)}
-.tl-head{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;flex-wrap:wrap}
-.tl-head .time{flex:none;font-variant-numeric:tabular-nums;color:var(--gold);font-weight:700;font-size:15px;min-width:96px}
-.tl-head .title{flex:1;font-size:15.5px;letter-spacing:.04em}
-.tl-head .tag{flex:none;font-size:11px;color:var(--night);background:var(--gold);border-radius:6px;padding:2px 8px;font-weight:700}
-.tl-head .tag.alt{background:var(--sun);color:#fff}
-.tl-head .arr{flex:none;color:var(--mist);transition:.3s;font-size:12px}
-.tl-item.open .arr{transform:rotate(180deg)}
-.tl-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
-.tl-body .inner{padding:0 20px 18px 110px;font-size:14px;color:var(--mist)}
-.tl-body .inner b{color:var(--paper)}
-.tl-body .inner .money{color:var(--sun)}
-@media(max-width:640px){.tl-body .inner{padding-left:20px}.tl-head .time{min-width:84px}}
-
-/* ===== 路线海拔图 ===== */
-.route-map{background:var(--night2);border:1px solid var(--line);border-radius:20px;padding:30px 22px;margin-top:36px}
-.route-stations{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;position:relative;margin:36px 0 10px}
-.route-stations:before{content:"";position:absolute;top:26px;left:8%;right:8%;height:3px;background:linear-gradient(90deg,var(--mist),var(--gold),var(--sunrise));border-radius:3px}
-.station{text-align:center;position:relative}
-.station .dot{width:54px;height:54px;margin:0 auto 10px;border-radius:50%;background:var(--night);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;position:relative;z-index:1;transition:.3s}
-.station:hover .dot{transform:scale(1.15);box-shadow:0 0 20px rgba(244,208,111,.5)}
-.station h4{font-size:15px;color:var(--paper)}
-.station .alt{font-size:12px;color:var(--gold)}
-.station .dur{font-size:11px;color:var(--mist)}
-@media(max-width:640px){.route-stations{grid-template-columns:1fr 1fr;gap:20px}.route-stations:before{display:none}}
-.route-notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
-.route-note{background:rgba(255,255,255,.04);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--mist)}
-.route-note b{color:var(--gold);display:block;margin-bottom:4px;font-size:14px}
-
-/* ===== 车次表 ===== */
-.train-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:26px}
-.train-tabs button{border:1px solid var(--line);background:transparent;color:var(--mist);padding:9px 22px;border-radius:999px;font-size:14px;cursor:pointer;transition:.3s}
-.train-tabs button.on{background:var(--gold);color:var(--ink);font-weight:700;border-color:transparent}
-.train-wrap{display:none}
-.train-wrap.show{display:block;animation:fadeUp .4s}
-.ttable{width:100%;border-collapse:collapse;background:var(--night2);border-radius:16px;overflow:hidden;border:1px solid var(--line)}
-.ttable th{background:rgba(244,208,111,.12);color:var(--gold);font-size:13px;padding:12px 10px;letter-spacing:.1em}
-.ttable td{padding:12px 10px;text-align:center;font-size:14px;border-top:1px solid rgba(255,255,255,.06);color:var(--mist)}
-.ttable tr.rec{background:rgba(244,208,111,.09)}
-.ttable tr.rec td{color:var(--paper)}
-.ttable .badge{display:inline-block;background:var(--sun);color:#fff;font-size:11px;padding:1px 8px;border-radius:6px;margin-left:6px}
-.ttable .price{color:var(--sun);font-weight:700}
-.train-note{font-size:12.5px;color:var(--mist);margin-top:14px;text-align:center}
-.train-note b{color:var(--gold)}
-@media(max-width:640px){.ttable{font-size:12px}.ttable td,.ttable th{padding:8px 4px}}
-
-/* 城内交通卡 */
-.city-traffic{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:26px}
-.ct-card{background:var(--night2);border:1px solid var(--line);border-radius:14px;padding:20px}
-.ct-card h4{color:var(--gold);font-size:15px;margin-bottom:8px}
-.ct-card p{font-size:13px;color:var(--mist)}
-.ct-card .p{color:var(--sun);font-weight:700}
-
-/* ===== 美食 ===== */
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.food-card{background:var(--night2);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.35s;cursor:pointer}
-.food-card:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(0,0,0,.45)}
-.food-card .pic{height:170px;overflow:hidden;position:relative}
-.food-card .pic img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.food-card:hover .pic img{transform:scale(1.08)}
-.food-card .pic .no{position:absolute;top:10px;left:10px;background:rgba(11,22,38,.8);border:1px solid var(--line);color:var(--gold);font-size:11px;padding:3px 10px;border-radius:999px;letter-spacing:.1em}
-.food-card .body{padding:16px 18px 18px}
-.food-card h4{font-size:16px;margin-bottom:6px}
-.food-card h4 .p{float:right;color:var(--sun);font-size:13px}
-.food-card p{font-size:13px;color:var(--mist)}
-.food-card .eat{margin-top:10px;font-size:12px;color:var(--gold);border-top:1px dashed var(--line);padding-top:8px}
-.food-banner{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:26px}
-.food-banner .fimg{border-radius:16px;overflow:hidden;height:220px;position:relative;border:1px solid var(--line)}
-.food-banner .fimg img{width:100%;height:100%;object-fit:cover}
-.food-banner .fimg span{position:absolute;left:12px;bottom:10px;background:rgba(11,22,38,.8);padding:4px 12px;border-radius:999px;font-size:12px;color:var(--gold)}
-@media(max-width:760px){.food-banner{grid-template-columns:1fr}.food-banner .fimg{height:160px}}
-
-/* ===== 装备清单 ===== */
-.gear-progress{background:var(--night2);border:1px solid var(--line);border-radius:14px;padding:16px 22px;display:flex;align-items:center;gap:18px;margin-bottom:28px;position:sticky;top:56px;z-index:5;backdrop-filter:blur(10px)}
-.gear-progress .bar{flex:1;height:10px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
-.gear-progress .fill{height:100%;width:0%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:99px;transition:width .4s}
-.gear-progress b{color:var(--gold);font-size:14px;min-width:120px;text-align:right}
-.gear-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.gear-cat h3{color:var(--gold);font-size:15px;letter-spacing:.15em;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.gear-item{display:flex;align-items:flex-start;gap:12px;background:var(--night2);border:1px solid rgba(255,255,255,.06);padding:12px 16px;border-radius:12px;margin-bottom:10px;cursor:pointer;transition:.25s;user-select:none}
-.gear-item:hover{border-color:var(--line)}
-.gear-item input{display:none}
-.gear-item .box{flex:none;width:20px;height:20px;border:2px solid var(--gold);border-radius:6px;margin-top:2px;position:relative;transition:.2s}
-.gear-item input:checked + .box{background:var(--gold)}
-.gear-item input:checked + .box:after{content:"✓";position:absolute;inset:0;color:var(--ink);font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.gear-item .txt{font-size:13.5px;color:var(--mist)}
-.gear-item .txt b{color:var(--paper);display:block;font-size:14.5px}
-.gear-item input:checked ~ .txt{opacity:.45;text-decoration:line-through}
-
-/* ===== 预算计算器 ===== */
-.budget{background:var(--night2);border:1px solid var(--line);border-radius:20px;padding:30px;max-width:820px;margin:0 auto}
-.budget h3{text-align:center;color:var(--gold);letter-spacing:.2em;margin-bottom:22px;font-size:18px}
-.b-row{display:flex;align-items:center;justify-content:space-between;padding:13px 6px;border-bottom:1px dashed rgba(255,255,255,.1);gap:12px}
-.b-row .l{display:flex;align-items:center;gap:12px;flex:1}
-.b-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--gold2);cursor:pointer;flex:none}
-.b-row .name{font-size:14.5px}
-.b-row .name small{color:var(--mist);font-size:12px;display:block}
-.b-row .num{display:flex;align-items:center;gap:8px}
-.b-row input[type=number]{width:86px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--paper);border-radius:8px;padding:6px 8px;font-size:14px;text-align:center}
-.b-row .unit{color:var(--gold);font-size:13px;min-width:56px}
-.b-total{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding:18px 20px;background:linear-gradient(135deg,rgba(232,176,75,.15),rgba(255,107,53,.1));border:1px solid var(--line);border-radius:14px}
-.b-total span{font-size:14px;color:var(--mist)}
-.b-total b{font-size:30px;color:var(--gold);font-variant-numeric:tabular-nums}
-.b-total b small{font-size:14px}
-
-/* ===== 贴士手风琴 ===== */
-.tips{max-width:820px;margin:0 auto}
-.tip{background:var(--night2);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
-.tip .t-head{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer}
-.tip .no{flex:none;width:30px;height:30px;border-radius:50%;background:rgba(244,208,111,.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
-.tip .t-head h4{flex:1;font-size:15.5px}
-.tip .lv{flex:none;font-size:11px;padding:3px 10px;border-radius:999px;font-weight:700}
-.lv.must{background:#ff6b35;color:#fff}
-.lv.strong{background:#f4a24b;color:#1a1000}
-.lv.tip2{background:#4da3ff;color:#fff}
-.tip .t-body{max-height:0;overflow:hidden;transition:max-height .4s}
-.tip .t-body .in{padding:0 20px 18px 64px;font-size:14px;color:var(--mist)}
-.tip .t-body .in b{color:var(--gold)}
-.tip.open .t-body{max-height:400px}
-.tip .t-head .arr{color:var(--mist);transition:.3s;font-size:12px}
-.tip.open .t-head .arr{transform:rotate(180deg)}
-
-/* ===== 数据卡 ===== */
-.fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
-.fact{background:var(--night2);border:1px solid var(--line);border-radius:14px;padding:20px 14px;text-align:center;transition:.3s}
-.fact:hover{transform:translateY(-4px);border-color:var(--gold)}
-.fact .v{font-size:26px;color:var(--gold);font-weight:800}
-.fact .v small{font-size:13px}
-.fact .k{font-size:12px;color:var(--mist);margin-top:6px;letter-spacing:.05em}
-
-/* ===== 图片横带 ===== */
-.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
-.gal img{height:130px;width:100%;object-fit:cover;border-radius:12px;cursor:zoom-in;transition:.35s;border:1px solid var(--line)}
-.gal img:hover{transform:scale(1.04);filter:brightness(1.1)}
-@media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}}
-
-/* ===== 灯箱 ===== */
-.lightbox{position:fixed;inset:0;background:rgba(5,10,20,.94);z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column;padding:24px}
-.lightbox.show{display:flex;animation:fadeUp .25s}
-.lightbox img{max-width:92%;max-height:78vh;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,.6)}
-.lightbox .cap{color:var(--mist);font-size:13px;margin-top:14px;letter-spacing:.1em}
-.lightbox .close{position:absolute;top:18px;right:24px;font-size:30px;color:var(--gold);cursor:pointer}
-
-/* ===== 页脚 ===== */
-footer{margin-top:80px;padding:44px 20px 60px;text-align:center;border-top:1px solid var(--line);background:linear-gradient(#0b162268,var(--night))}
-footer .fm{font-size:15px;letter-spacing:.5em;color:var(--gold);margin-bottom:14px}
-footer p{font-size:12.5px;color:var(--mist);max-width:640px;margin:4px auto;line-height:1.9}
-
-/* 返回顶部 */
-.totop{position:fixed;right:18px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:60;box-shadow:0 6px 24px rgba(232,176,75,.4);border:none}
-.totop.show{opacity:1;pointer-events:auto}
-
-/* 里程碑标签 */
-.step-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.step-tags span{font-size:11px;border:1px solid var(--line);color:var(--gold);padding:2px 10px;border-radius:999px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:90;
+  background:rgba(13,26,20,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav-logo{font-weight:700;color:var(--gold);white-space:nowrap;font-size:15px;letter-spacing:.5px}
+nav a.nl{color:var(--muted);font-size:13.5px;white-space:nowrap;padding:4px 2px;border-bottom:2px solid transparent;transition:.2s}
+nav a.nl:hover{color:var(--jade)}
+nav a.nl.act{color:var(--bamboo2);border-bottom-color:var(--bamboo)}
+/* ---------- hero ---------- */
+header.hero{
+  min-height:96vh;position:relative;display:flex;align-items:center;
+  background:linear-gradient(rgba(9,20,15,.55),rgba(9,20,15,.86)),url('img/bamboo_forest.jpg') center/cover fixed;
+}
+.hero-in{position:relative;z-index:2;width:100%;text-align:center;padding:120px 20px 80px}
+.kicker{
+  display:inline-block;font-size:12.5px;letter-spacing:3px;color:var(--gold2);
+  border:1px solid rgba(232,184,75,.4);border-radius:30px;padding:6px 18px;margin-bottom:22px;
+  background:rgba(232,184,75,.07);
+}
+h1{font-size:clamp(30px,6vw,58px);line-height:1.25;font-weight:800;letter-spacing:1px}
+h1 em{font-style:normal;color:var(--bamboo2)}
+.sub{margin-top:16px;color:var(--muted);font-size:clamp(13px,1.6vw,16px);letter-spacing:.5px}
+/* countdown */
+.cd{display:flex;justify-content:center;gap:12px;margin-top:34px;flex-wrap:wrap}
+.cd-cell{
+  background:rgba(29,53,39,.6);border:1px solid var(--line);border-radius:14px;
+  padding:12px 18px;min-width:84px;backdrop-filter:blur(6px);
+}
+.cd-num{font-size:30px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.1}
+.cd-lab{font-size:11.5px;color:var(--muted);letter-spacing:1px;margin-top:3px}
+.cd-txt{margin-top:18px;font-size:14px;color:var(--jade)}
+/* ---------- section ---------- */
+section{padding:76px 0;border-top:1px solid var(--line);scroll-margin-top:64px}
+.sec-head{margin-bottom:30px}
+.sec-num{font-size:12px;letter-spacing:4px;color:var(--gold);font-weight:700}
+.sec-head h2{font-size:clamp(22px,3.4vw,34px);margin-top:8px;font-weight:800;letter-spacing:.5px}
+.sec-head p{color:var(--muted);margin-top:10px;font-size:14.5px;max-width:760px}
+/* ---------- tabs ---------- */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tab{
+  cursor:pointer;border:1px solid var(--line);background:var(--ink2);color:var(--muted);
+  padding:11px 22px;border-radius:12px;font-size:14.5px;transition:.22s;font-family:inherit;
+}
+.tab:hover{border-color:var(--bamboo);color:var(--jade)}
+.tab.on{background:linear-gradient(135deg,var(--bamboo),#3f8f63);color:#08150f;font-weight:700;border-color:transparent}
+.panel{display:none;animation:fade .35s ease}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* ---------- timeline ---------- */
+.tl{position:relative;padding-left:8px}
+.tl::before{content:"";position:absolute;left:70px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--bamboo),transparent)}
+.tl-item{display:flex;gap:22px;margin-bottom:24px;align-items:flex-start}
+.tl-day{
+  flex:0 0 62px;text-align:right;font-weight:800;font-size:13px;color:var(--gold);
+  padding-top:14px;letter-spacing:.5px;
+}
+.tl-day span{display:block;font-weight:400;font-size:11px;color:var(--muted);margin-top:2px}
+.tl-body{
+  flex:1;background:linear-gradient(135deg,rgba(29,53,39,.72),rgba(20,38,29,.72));
+  border:1px solid var(--line);border-left:3px solid var(--bamboo);
+  border-radius:14px;padding:18px 20px;position:relative;
+}
+.tl-body::before{
+  content:"";position:absolute;left:-27px;top:20px;width:9px;height:9px;border-radius:50%;
+  background:var(--bamboo);box-shadow:0 0 0 4px rgba(95,174,126,.18);
+}
+.tl-body h4{font-size:16.5px;color:var(--jade);margin-bottom:8px;font-weight:700}
+.tl-body p{font-size:13.8px;color:var(--muted);margin-bottom:10px}
+.tl-body ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.tl-body li{font-size:13.6px;padding-left:4px;opacity:.94}
+/* ---------- card grid ---------- */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{
+  background:linear-gradient(150deg,rgba(29,53,39,.75),rgba(18,34,26,.8));
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.28s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(143,208,168,.42);box-shadow:0 14px 34px rgba(0,0,0,.34)}
+.card-img{height:186px;overflow:hidden;position:relative;background:var(--ink3)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-tag{
+  position:absolute;top:12px;left:12px;background:rgba(9,20,15,.76);color:var(--gold2);
+  font-size:11.5px;padding:4px 11px;border-radius:20px;backdrop-filter:blur(6px);
+  border:1px solid rgba(232,184,75,.3);
+}
+.card-bd{padding:16px 18px;flex:1;display:flex;flex-direction:column;gap:8px}
+.card-bd h4{font-size:16px;color:var(--jade)}
+.card-bd p{font-size:13.4px;color:var(--muted);flex:1}
+.price{color:var(--gold);font-weight:700;font-size:14.5px}
+/* ---------- table ---------- */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:13.8px;min-width:620px}
+th,td{padding:12px 15px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:rgba(29,53,39,.86);color:var(--bamboo2);font-weight:700;font-size:13px;letter-spacing:.5px}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:.18s}
+tbody tr:hover{background:rgba(95,174,126,.07)}
+td.hl{color:var(--gold);font-weight:700}
+/* ---------- checklist ---------- */
+.progress{height:8px;background:var(--ink3);border-radius:20px;overflow:hidden;margin:6px 0 22px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--bamboo),var(--gold));border-radius:20px;transition:width .4s}
+.chk{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(228px,1fr))}
+.chk label{
+  display:flex;align-items:center;gap:11px;background:rgba(20,38,29,.72);
+  border:1px solid var(--line);border-radius:12px;padding:12px 15px;cursor:pointer;
+  font-size:13.6px;transition:.2s;user-select:none;
+}
+.chk label:hover{border-color:var(--bamboo)}
+.chk input{appearance:none;width:19px;height:19px;min-width:19px;border:2px solid var(--bamboo);
+  border-radius:6px;position:relative;cursor:pointer;transition:.2s;background:transparent}
+.chk input:checked{background:var(--bamboo)}
+.chk input:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;color:#08150f;font-size:13px;font-weight:900}
+.chk label:has(input:checked){opacity:.55;border-color:rgba(95,174,126,.5)}
+.chk label:has(input:checked) span{text-decoration:line-through}
+/* ---------- budget ---------- */
+.bd-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.bd-row:last-of-type{border-bottom:none}
+.bd-row input{appearance:none;width:19px;height:19px;min-width:19px;border:2px solid var(--bamboo);border-radius:6px;position:relative;cursor:pointer}
+.bd-row input:checked{background:var(--bamboo)}
+.bd-row input:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#08150f;font-size:13px;font-weight:900}
+.bd-row .nm{flex:1}
+.bd-row .vl{color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+.bd-total{
+  margin-top:18px;padding:18px 22px;border-radius:14px;
+  background:linear-gradient(135deg,rgba(95,174,126,.16),rgba(232,184,75,.13));
+  border:1px solid rgba(232,184,75,.3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+}
+.bd-total b{font-size:26px;color:var(--gold);font-variant-numeric:tabular-nums}
+/* ---------- accordion ---------- */
+.acc{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:rgba(20,38,29,.55)}
+.acc-item+.acc-item{border-top:1px solid var(--line)}
+.acc-h{
+  padding:16px 20px;cursor:pointer;display:flex;align-items:center;gap:12px;
+  font-size:14.8px;font-weight:600;transition:.2s;user-select:none;
+}
+.acc-h:hover{background:rgba(95,174,126,.07)}
+.acc-h .ico{font-size:17px}
+.acc-h .arr{margin-left:auto;color:var(--bamboo);transition:.3s;font-size:12px}
+.acc-item.open .acc-h{color:var(--jade);background:rgba(95,174,126,.1)}
+.acc-item.open .arr{transform:rotate(180deg)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.acc-b-in{padding:0 20px 18px 52px;font-size:13.7px;color:var(--muted)}
+.acc-b-in p{margin-bottom:8px}
+.acc-b-in b{color:var(--jade)}
+/* ---------- figures / key data ---------- */
+.kv{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.kv-c{background:rgba(20,38,29,.68);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.kv-c .n{font-size:27px;font-weight:800;color:var(--gold);line-height:1.15}
+.kv-c .l{font-size:12.4px;color:var(--muted);margin-top:6px;letter-spacing:.5px}
+/* ---------- gallery ---------- */
+.gal{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.gal img{width:100%;height:200px;object-fit:cover;border-radius:12px;cursor:zoom-in;transition:.3s;border:1px solid var(--line)}
+.gal img:hover{transform:scale(1.03);border-color:var(--bamboo)}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(6,13,10,.94);z-index:200;display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb.on{display:flex;animation:fade .25s}
+.lb img{max-width:94%;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+/* ---------- note ---------- */
+.note{
+  background:linear-gradient(135deg,rgba(232,184,75,.1),rgba(95,174,126,.08));
+  border:1px solid rgba(232,184,75,.28);border-left:3px solid var(--gold);
+  border-radius:12px;padding:15px 18px;font-size:13.6px;color:var(--jade);margin-top:18px;
+}
+.note b{color:var(--gold2)}
+/* top btn */
+#top{
+  position:fixed;right:20px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,var(--bamboo),#3f8f63);color:#08150f;border:none;
+  font-size:19px;cursor:pointer;display:none;align-items:center;justify-content:center;
+  box-shadow:0 8px 22px rgba(0,0,0,.4);z-index:95;
+}
+#top.on{display:flex}
+footer{padding:40px 20px 60px;text-align:center;color:var(--muted);font-size:12.6px;border-top:1px solid var(--line)}
+@media(max-width:640px){
+  .tl::before{left:8px}
+  .tl-item{flex-direction:column;gap:10px}
+  .tl-day{text-align:left;padding-top:0}
+  .tl-day span{display:inline;margin-left:8px}
+  .tl-body::before{display:none}
+  section{padding:56px 0}
+}
 </style>
 </head>
 <body>
-
-<!-- ================= HERO ================= -->
-<div class="hero">
-  <img class="bg" src="img/hero_sunrise.jpg" alt="泰山岱顶金色庙宇">
-  <div class="mask"></div>
-  <div class="hero-content">
-    <div class="moon">🌕</div>
-    <h1 class="serif">把中秋还给月亮<br>把自己交给<span class="gold">泰　山</span></h1>
-    <p class="sub">苏州园区 出发 · 五岳之首 · 一夜登顶1545米</p>
-    <div class="tagchips">
-      <div class="chip">🗓 2026 中秋 · 9月25日（周五）</div>
-      <div class="chip">🚄 高铁直达 3.5小时</div>
-      <div class="chip">🌙 中秋夜爬 · 月光全程相伴</div>
-      <div class="chip">🌅 次日06:05 岱顶看日出</div>
-    </div>
-    <div class="countdown" id="cd">
-      <div class="cd-box"><b id="cd-d">--</b><span>天</span></div>
-      <div class="cd-box"><b id="cd-h">--</b><span>时</span></div>
-      <div class="cd-box"><b id="cd-m">--</b><span>分</span></div>
-      <div class="cd-box"><b id="cd-s">--</b><span>秒</span></div>
-    </div>
-    <p style="font-size:12px;color:var(--mist);letter-spacing:.15em">— 距离 G550 次列车 07:47 准点发车 —</p>
+<nav>
+  <div class="nav-in">
+    <span class="nav-logo">🎋 莫干山慢游</span>
+    <a class="nl" href="#plan">行程方案</a>
+    <a class="nl" href="#stay">住哪最好</a>
+    <a class="nl" href="#route">景点动线</a>
+    <a class="nl" href="#train">交通车次</a>
+    <a class="nl" href="#food">山野味道</a>
+    <a class="nl" href="#pack">行李清单</a>
+    <a class="nl" href="#money">预算算账</a>
+    <a class="nl" href="#tips">避坑贴士</a>
+    <a class="nl" href="#data">关键数据</a>
   </div>
-  <div class="scroll-hint">向下滚动 ↓</div>
-</div>
+</nav>
 
-<!-- ================= NAV ================= -->
-<nav><div class="wrap">
-  <a href="#plans" class="act">行程方案</a>
-  <a href="#route">登山路线</a>
-  <a href="#train">高铁车次</a>
-  <a href="#food">舌尖泰安</a>
-  <a href="#gear">装备清单</a>
-  <a href="#budget">预算计算</a>
-  <a href="#tips">避坑贴士</a>
-  <a href="#facts">关键数据</a>
-</div></nav>
+<header class="hero">
+  <div class="hero-in">
+    <span class="kicker">2026 国庆 · 不特种兵 · 不人挤人</span>
+    <h1>躺进<em>竹海</em>里的<br>四天三夜慢时光</h1>
+    <p class="sub">苏州园区出发 · 高铁40分钟到德清 · 只做三件小事：喝茶、走路、看云</p>
+    <div class="cd" id="cd">
+      <div class="cd-cell"><div class="cd-num" id="cd-d">--</div><div class="cd-lab">天</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-h">--</div><div class="cd-lab">时</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-m">--</div><div class="cd-lab">分</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-s">--</div><div class="cd-lab">秒</div></div>
+    </div>
+    <p class="cd-txt" id="cd-txt">正在计算离出发还有多久…</p>
+  </div>
+</header>
 
-<!-- ================= 方案 ================= -->
-<section id="plans">
+<main class="wrap">
+
+<section id="plan">
   <div class="sec-head">
-    <span class="kicker">PLAN · A / B</span>
-    <h2 class="serif">两种玩法，任你选</h2>
-    <p>中秋夜爬版是精髓 · 山顶住宿版是奢华，各有各的浪漫</p>
+    <div class="sec-num">PLAN · 行程方案</div>
+    <h2>两套节奏，都松到骨子里</h2>
+    <p>国庆的莫干山，人潮集中在上午 9-11 点和核心景区那几站。我们的对策很简单：<b>晚出门、绕开主线、把时间留给院子</b>。下面两套方案按自己体力挑一套就好。</p>
   </div>
 
-  <div class="plan-switch">
-    <button class="on" data-plan="A">🌙 方案A · 中秋夜爬版</button>
-    <button data-plan="B">🏨 方案B · 山顶住宿版</button>
+  <div class="tabs">
+    <button class="tab on" data-t="p1">🍵 方案A · 四天三夜·纯躺竹海版</button>
+    <button class="tab" data-t="p2">⛰️ 方案B · 三天两夜·轻徒步版</button>
   </div>
 
-  <!-- ========== 方案A ========== -->
-  <div class="plan-box show" id="plan-A">
-    <div class="plan-hero">
-      <div class="txt">
-        <h3 class="serif">方案A · <em>中秋夜爬版</em></h3>
-        <p class="who">适合：体力中等以上的伙伴 / 预算党 / 想要人生难忘一夜的你</p>
-        <p>中秋当晚从红门出发，一路头灯如星河、月光洒台阶——爬到南天门回头看万家灯火，登顶正好等日出。省下一晚房费，用一双腿换来五岳独尊的黎明。<b style="color:var(--gold)">总花费约 ¥1300+/人</b>（含往返高铁）。</p>
-        <div class="step-tags">
-          <span>25日 07:47 发车</span><span>当天下午岱庙</span><span>22:00 红门起爬</span><span>26日 04:30 占位</span><span>06:05 日出</span><span>索道下山</span><span>13:00 返程</span>
+  <div class="panel on" id="p1">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-day">DAY 1<span>10月3日</span></div>
+        <div class="tl-body">
+          <h4>慢速抵达 · 把节奏交给山路</h4>
+          <p>11:30 前到德清站，出站不用急，先去庾村吃个午饭。下午入住民宿、睡个午觉，傍晚在院子看日落喝茶。</p>
+          <ul>
+            <li>🚄 G8357 苏州南 10:14 → 德清 10:49（仅35分钟）</li>
+            <li>🚌 Y1 旅游专线 德清站 → 莫干山集散中心 ¥10，约 70 分钟</li>
+            <li>🥢 午餐庾村：笋干烧肉 + 肉沫笋丝面，人均 ¥50</li>
+            <li>🏡 15:00 入住民宿，睡到自然醒是正经事</li>
+            <li>🌅 18:00 院子看日落，民宿私房菜晚餐</li>
+          </ul>
         </div>
       </div>
-      <div class="pics"><img src="img/night_stairs.jpg" alt="夜间登山人流剪影"><div class="cap">夜爬泰山：头灯连成星河，月光与灯光同路</div></div>
-    </div>
-
-    <div class="tl">
-      <div class="tl-item open">
-        <div class="tl-head"><span class="time">D0 · 9月25日</span><span class="title">05:50 苏州园区出发 → 泰安</span><span class="tag">中秋出发</span><span class="arr">▾</span></div>
-        <div class="tl-body"><div class="inner">
-          🏙️ <b>05:50</b> 从苏州园区出发，地铁通勤约 50 分钟（2号线桑田岛方向/换乘方案见「高铁车次」节）。<br>
-          🚄 <b>07:47 – 11:18</b> G550 次高铁苏州北 → 泰安（二等座 ¥370，行程3.5小时），车上补个回笼觉。<br>
-          🚌 <b>11:30</b> 泰安站高铁公交枢纽，<b class="money">K37路（¥2，约1h）</b>或<b class="money">游3路旅游专线（¥5）</b>直达红门；赶时间可打车约 ¥25-30。<br>
-          🎒 <b>12:30</b> 红门游客中心寄存行李（¥10-20），轻装上阵！夜爬不需要订今晚的房。<br>
-          🍽️ <b>13:00</b> 午餐：泰山豆腐宴（红门附近老店，人均 ¥40-60）。<br>
-          🏛️ <b>14:00-16:30</b> <b>岱庙</b>——历代帝王封禅泰山的起点，天贶殿、汉柏院、秦刻石（门票约¥30，约2.5h）。<br>
-          🛒 <b>17:00</b> 采购夜爬补给：红门山下买<b>登山杖（¥5）、头灯（¥15-25）、水×2、士力架、面包</b>，比山上便宜一半不止。<br>
-          🌕 <b>18:20</b> 中秋月出！找家小店坐着等月亮爬高，吃碗热汤面。⚠️ 今晚务必<b>睡足3小时</b>（找钟点房或奶茶店眯一觉，18:00-21:30），夜爬是持久战。<br>
-          🌙 <b>22:00</b> 红门检票出发——中秋月正头顶，出发！
-        </div></div>
+      <div class="tl-item">
+        <div class="tl-day">DAY 2<span>10月4日</span></div>
+        <div class="tl-body">
+          <h4>核心景区 · 只挑三个点</h4>
+          <p>早上 8:30 前上景区，避开团队潮。剑池 + 芦花荡 + 荫山街民国别墅群，三小时走完，中午下山吃饭，下午回民宿躺平。</p>
+          <ul>
+            <li>🎫 大门票 ¥80（3天有效，可多次进出）</li>
+            <li>🚐 集散中心换乘景区巴士上山，往返 ¥35</li>
+            <li>💧 剑池：干将莫邪铸剑处，四叠瀑布层层跌落</li>
+            <li>🌿 芦花荡公园：山顶湿地，人少清净</li>
+            <li>🏛️ 荫山街：民国老别墅群，四百多幢老房子</li>
+            <li>😴 15:00 撤退回民宿，下午茶 + 发呆</li>
+          </ul>
+        </div>
       </div>
       <div class="tl-item">
-        <div class="tl-head"><span class="time">D1 · 9月26日</span><span class="title">凌晨登顶 → 日出 → 下山返程</span><span class="tag alt">核心日</span><span class="arr">▾</span></div>
-        <div class="tl-body"><div class="inner">
-          🥾 <b>22:00 – 01:00</b> 红门 → 中天门（约7.5km缓阶，热身段，全程路灯+月光）。中天门补给点有<b>免费热水</b>，泡面¥10。<br>
-          😤 <b>01:00 – 02:30</b> 慢十八盘·不紧不慢段，云步桥、五大夫松都在这段，抬头就是银河。<br>
-          💪 <b>02:30 – 04:00</b> <b>紧十八盘</b>——最陡的1600级台阶，坡度70°，扶稳栏杆慢慢来，这段超车最容易摔。<br>
-          🧥 <b>04:00 – 04:30</b> 过南天门进天街，<b>租军大衣（¥30+押金¥100，13个官方统租统还点）</b>，直奔<b>拱北石/日观峰</b>占位。<br>
-          🌅 <b>04:30 – 06:05</b> 最冷的90分钟，裹紧大衣、喝口热水，看天从墨蓝烧成金红。<b>06:05，日出准时开演。</b><br>
-          📸 <b>06:05 – 08:30</b> 玉皇顶（1545m打卡）、五岳独尊石刻（¥5元/人拍照位可以排）、天街、碧霞祠。<br>
-          🚡 <b>08:30 – 10:30</b> 下山二选一：A·索道（中天门索道¥100单程）+ 天外村大巴（¥35）回地面；B·腿力尚存就原路走下山（约3h，伤膝盖，量力而行）。<br>
-          🍗 <b>11:00</b> 山脚庆功宴：<b>红油炒鸡</b>！麻辣鲜香配煎饼，人均¥40，登山完吃什么都香。<br>
-          🚄 <b>13:00 – 16:44</b> G1708/G1705 泰安 → 苏州北（二等座¥492），或者想多歇会儿就 16:11 的 G739。<br>
-          🏠 <b>17:30</b> 回到苏州，倒床上睡到中秋假期最后一日，圆满。
-        </div></div>
+        <div class="tl-day">DAY 3<span>10月5日</span></div>
+        <div class="tl-body">
+          <h4>竹林徒步 · 小众路线避人潮</h4>
+          <p>这天彻底不进核心景区，走外围野路子。竹海步道 + 溪涧边走走停停，全程不超过 4 小时，中午在山上农家吃个饭。</p>
+          <ul>
+            <li>🥾 上午竹海步道轻徒步（约2小时，缓坡）</li>
+            <li>💦 下午溪涧边坐一会儿，听水声刷手机</li>
+            <li>🍲 中午山上农家乐：油焖笋 + 土鸡汤</li>
+            <li>🌙 晚上回庾村逛市集，看灯笼亮起来</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-day">DAY 4<span>10月6日</span></div>
+        <div class="tl-body">
+          <h4>赖床 · 慢慢回家</h4>
+          <p>上午赖到最后一刻退房，在庾村买点笋干特产，下午高铁回苏州。</p>
+          <ul>
+            <li>☕ 上午民宿早餐 + 露台再看一眼竹海</li>
+            <li>🛍️ 庾村买手信：笋干、笋豆、莫干黄芽茶</li>
+            <li>🚄 G8358 德清 18:27 → 苏州南 19:09（¥54）</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ========== 方案B ========== -->
-  <div class="plan-box" id="plan-B">
-    <div class="plan-hero">
-      <div class="txt">
-        <h3 class="serif">方案B · <em>山顶住宿版</em></h3>
-        <p class="who">适合：不想熬夜爬山的伙伴 / 情侣纪念日 / 带长辈或预算宽裕的你</p>
-        <p>中秋夜直接睡在1545米的岱顶，不用摸黑占位，推窗就是云海月色。神憩宾馆是山顶离日观峰最近的老牌酒店，中秋房<b style="color:var(--gold)">约¥1299/晚</b>（务必提前抢订！）。<b style="color:var(--gold)">总花费约 ¥2600+/人</b>。</p>
-        <div class="step-tags">
-          <span>25日 07:47 发车</span><span>午餐豆腐宴</span><span>天外村大巴+索道</span><span>岱顶过中秋</span><span>26日 06:05 日出</span><span>索道下山</span><span>13:00 返程</span>
+  <div class="panel" id="p2">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-day">DAY 1<span>10月4日</span></div>
+        <div class="tl-body">
+          <h4>抵达 · 庾村半日闲</h4>
+          <ul>
+            <li>🚄 上午高铁到德清，Y1 专线进山（¥10）</li>
+            <li>🏡 中午入住，下午庾村民国小镇逛市集</li>
+            <li>🥢 晚餐笋干烧肉 + 清炒时蔬</li>
+            <li>🌆 傍晚在镇上散步，看灯笼与老建筑</li>
+          </ul>
         </div>
       </div>
-      <div class="pics"><img src="img/mid_autumn.jpg" alt="中秋月夜"><div class="cap">在五岳之巅过中秋，月亮近得像挂在窗前</div></div>
-    </div>
-
-    <div class="tl">
-      <div class="tl-item open">
-        <div class="tl-head"><span class="time">D0 · 9月25日</span><span class="title">高铁直达 → 大巴索道上山 → 岱顶中秋夜</span><span class="tag">中秋之夜</span><span class="arr">▾</span></div>
-        <div class="tl-body"><div class="inner">
-          🚄 <b>07:47 – 11:18</b> G550 苏州北 → 泰安（¥370）。<br>
-          🍽️ <b>12:00</b> 泰安站附近先吃<b>泰山豆腐宴</b>垫底，山上晚饭选择少且贵。<br>
-          🚌 <b>13:30</b> 打车或公交到<b>天外村广场</b>（约15分钟），购大巴票。<br>
-          🚡 <b>14:00 – 16:00</b> 天外村大巴（¥35）盘山至中天门 → <b>中天门索道</b>（¥100，节假日排队1-2小时属正常，可提前公众号分时段预约）→ 南天门。<br>
-          🏨 <b>16:30</b> 入住<b>神憩宾馆</b>（或云巢宾馆/仙居宾馆），放好行李。<br>
-          🌕 <b>17:30 – 21:00</b> 天街散步看日落 → 晚饭（山顶餐厅人均¥60-100）→ <b>中秋夜在岱顶赏月</b>：1545米海拔、离城市光污染最远的满月，记得带一盒小月饼上山分享。<br>
-          😴 <b>21:30</b> 早睡，明早酒店叫早看日出（神憩距日观峰步行仅5分钟，不用裹军大衣挨冻）。
-        </div></div>
+      <div class="tl-item">
+        <div class="tl-day">DAY 2<span>10月5日</span></div>
+        <div class="tl-body">
+          <h4>核心景区 · 一次走够</h4>
+          <ul>
+            <li>🎫 8:00 前到集散中心（避开9-11点高峰）</li>
+            <li>🚐 巴士上山 → 剑池飞瀑（1小时）</li>
+            <li>🌿 芦花荡公园 → 荫山街老别墅（1.5小时）</li>
+            <li>🍱 荫山街简餐，下午沿"十八盘"山道慢走</li>
+            <li>😴 17:00 回民宿，泡个脚</li>
+          </ul>
+        </div>
       </div>
       <div class="tl-item">
-        <div class="tl-head"><span class="time">D1 · 9月26日</span><span class="title">躺赢日出 → 山顶漫游 → 返程</span><span class="tag alt">核心日</span><span class="arr">▾</span></div>
-        <div class="tl-body"><div class="inner">
-          🌅 <b>05:30</b> 酒店叫早，5分钟走到日观峰，<b>06:05 日出</b>+云海。<br>
-          🍜 <b>07:00</b> 回酒店吃早餐（多数含早），收拾退房。<br>
-          📸 <b>07:30 – 09:30</b> 玉皇顶、五岳独尊、拱北石、碧霞祠，慢慢逛慢慢拍，白天把昨晚走过的天街重新看一遍，完全是两个世界。<br>
-          🚡 <b>09:30 – 11:30</b> 索道+大巴下山（¥100+¥35），退押金、取寄存行李。<br>
-          🍗 <b>12:00</b> 山脚<b>红油炒鸡</b>+煎饼卷大葱庆功。<br>
-          🚄 <b>13:00 – 16:44</b> G1708 泰安 → 苏州北（¥492），到家还能赶上晚饭。
-        </div></div>
+        <div class="tl-day">DAY 3<span>10月6日</span></div>
+        <div class="tl-body">
+          <h4>竹海晨光 · 返程</h4>
+          <ul>
+            <li>🌄 早起在民宿周边竹林步道走 1 小时</li>
+            <li>🛍️ 采购特产，慢慢退房</li>
+            <li>🚄 G1520 德清 16:46 → 苏州南 17:20（¥62）</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
+<section id="stay">
+  <div class="sec-head">
+    <div class="sec-num">STAY · 住哪最好</div>
+    <h2>选对住宿，等于成功了一半</h2>
+    <p>莫干山的玩法本质是"以民宿为圆心"——住得好，剩下都好说。国庆价格会上浮，建议 9 月中旬就订。</p>
+  </div>
 
-<!-- ================= 路线 ================= -->
+  <div class="grid g3">
+    <div class="card">
+      <div class="card-img"><span class="card-tag">最省事</span><img src="img/moganshan_view.jpg" alt="庾村周边"></div>
+      <div class="card-bd">
+        <h4>🏘️ 庾村集镇（山下）</h4>
+        <p>吃饭、逛市集、买手信全在步行范围。集散中心就在旁边，上景区不用赶车。适合怕麻烦、想热闹一点的。</p>
+        <span class="price">国庆约 ¥500-900/晚</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img"><span class="card-tag">最出片</span><img src="img/hillside_stay.jpg" alt="半山民宿"></div>
+      <div class="card-bd">
+        <h4>🌲 半山腰民宿（推荐）</h4>
+        <p>推窗就是竹海，安静到只剩风声。这类房源原来卖 1200-1800，现在稳定在 450-600，性价比最高。适合只想安静躺着的上班族。</p>
+        <span class="price">国庆约 ¥600-1200/晚</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img"><span class="card-tag">最安静</span><img src="img/forest_path.jpg" alt="竹林深处"></div>
+      <div class="card-bd">
+        <h4>🎋 竹林深处民宿</h4>
+        <p>进了院子就不想出门。带庭院、私汤、露台的房源，早上起来推门见雾，是这趟旅行最值钱的部分。</p>
+        <span class="price">国庆约 ¥800-1500/晚</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>订房提醒：</b>国庆属于绝对旺季，热门民宿一房难求、价格翻倍。建议 <b>提前 2-3 周</b>预订；如果日期能挪，<b>10月7日之后</b>入住会更便宜；带宠物的记得先问清楚是否可携宠。
+  </div>
+</section>
+
 <section id="route">
   <div class="sec-head">
-    <span class="kicker">ROUTE · 红门经典线</span>
-    <h2 class="serif">红门 → 玉皇顶 · 6660级台阶</h2>
-    <p>历代帝王封禅同款路线，夜爬首选，全程路灯覆盖</p>
+    <div class="sec-num">ROUTE · 景点动线</div>
+    <h2>四个地方，够玩两天</h2>
+    <p>莫干山景点超过百处，但躺平度假不需要面面俱到。以下四处代表了自然、文艺、民国底蕴和秋色，按兴趣挑就行。</p>
   </div>
-  <div class="route-map">
-    <div class="route-stations">
-      <div class="station"><div class="dot">🚪</div><h4>红门</h4><div class="alt">海拔250m · 起点</div><div class="dur">22:00 出发</div></div>
-      <div class="station"><div class="dot">🌿</div><h4>中天门</h4><div class="alt">海拔847m · 半山</div><div class="dur">约3h · 有免费热水</div></div>
-      <div class="station"><div class="dot">⛰️</div><h4>十八盘</h4><div class="alt">847→1460m · 最陡段</div><div class="dur">1600级 · 坡70°</div></div>
-      <div class="station"><div class="dot">⛩️</div><h4>南天门</h4><div class="alt">海拔1460m · 天门</div><div class="dur">04:00 · 租军大衣</div></div>
-      <div class="station"><div class="dot">👑</div><h4>玉皇顶</h4><div class="alt">海拔1545m · 极顶</div><div class="dur">06:05 日出</div></div>
+
+  <div class="grid g2">
+    <div class="card">
+      <div class="card-img"><span class="card-tag">自然奇观</span><img src="img/waterfall.jpg" alt="剑池飞瀑"></div>
+      <div class="card-bd">
+        <h4>💧 剑池飞瀑</h4>
+        <p>干将莫邪铸剑的传说就发生在这里，四叠瀑布层层跌落，竹林环绕。路上还有 AR 互动装置可以玩。早点去人少好拍照，全程约 1 小时。</p>
+        <span class="price">含在大门票内</span>
+      </div>
     </div>
-    <div class="route-notes">
-      <div class="route-note"><b>✅ 为什么选红门线</b>路灯全覆盖、补给点最密、夜里同伴最多（中秋夜预计上万夜爬者），安全感拉满，迷路概率为零。</div>
-      <div class="route-note"><b>⏱️ 时间节奏</b>全程6-6.6km，正常6小时登顶。中秋人多，按 6.5h 倒推：想 04:30 到山顶，<b>22:00 前必须出发</b>。</div>
-      <div class="route-note"><b>🍜 中天门补给</b>免费热水（自带保温杯！）、泡面¥10、烤肠¥5、登山杖比山下贵，山下买好。</div>
-      <div class="route-note"><b>🧥 军大衣铁律</b>只在南天门/天街租（¥30+押金¥100，官方13个统租统还点），山下租了背上山是自虐。</div>
+    <div class="card">
+      <div class="card-img"><span class="card-tag">文艺底蕴</span><img src="img/autumn_park.jpg" alt="芦花荡与老别墅"></div>
+      <div class="card-bd">
+        <h4>🏛️ 芦花荡 + 荫山街别墅群</h4>
+        <p>芦花荡是山顶湿地公园，清静；荫山街周边有四百多幢民国老别墅，蒋介石官邸、皇后饭店都在这一带。走一走，像翻开一本旧相册。</p>
+        <span class="price">含在大门票内</span>
+      </div>
     </div>
-    <div class="gal">
-      <img src="img/stone_steps.jpg" alt="泰山石阶" class="lb" data-cap="红门线石阶密林段">
-      <img src="img/stairs_crowd.jpg" alt="台阶人流" class="lb" data-cap="节假日十八盘的人潮，中秋夜只会更多">
-      <img src="img/night_temple.jpg" alt="夜里亮灯的古塔" class="lb" data-cap="夜里的古建亮灯，转角就是风景">
-      <img src="img/mist_mountains.jpg" alt="晨雾群山" class="lb" data-cap="下山时回望，晨雾里群山如黛">
+    <div class="card">
+      <div class="card-img"><span class="card-tag">市集烟火</span><img src="img/autumn_hillside.jpg" alt="庾村"></div>
+      <div class="card-bd">
+        <h4>🎪 庾村民国风情小镇</h4>
+        <p>文创市集 + 民国建筑 + 咖啡馆 + 面包房，傍晚灯笼亮起最有味道。窑炉面包外脆内软，坐着就能看见竹林。免费开放，随便逛。</p>
+        <span class="price">免费</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img"><span class="card-tag">避人潮首选</span><img src="img/bamboo_hill.jpg" alt="竹海步道"></div>
+      <div class="card-bd">
+        <h4>🎋 竹海步道（外围）</h4>
+        <p>不进核心景区，走外围山野小路。溪涧、竹林、缓坡，全程轻松，是大坑景区与怪石角一带的经典轻徒步线。国庆这天最不该去挤主线。</p>
+        <span class="price">免费</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= 车次 ================= -->
 <section id="train">
   <div class="sec-head">
-    <span class="kicker">TRAIN · 12306</span>
-    <h2 class="serif">高铁直达 · 3.5小时跨越700km</h2>
-    <p>苏州园区 → 苏州北（地铁2号线约40分钟）→ 泰安站（京沪高铁）</p>
+    <div class="sec-num">TRAIN · 交通车次</div>
+    <h2>高铁 35 分钟，把高速堵车甩在身后</h2>
+    <p>苏州南 → 德清，国庆期间每天十几班高铁，闭眼买就行。核心三班车如下：</p>
   </div>
-
-  <div class="train-tabs">
-    <button class="on" data-train="go">去程 · 9月25日（五）</button>
-    <button data-train="back">返程 · 9月26日（六）</button>
-  </div>
-
-  <div class="train-wrap show" id="train-go">
-    <table class="ttable">
-      <tr><th>车次</th><th>苏州北发</th><th>到泰安</th><th>历时</th><th>二等座</th><th>推荐</th></tr>
-      <tr class="rec"><td>G550</td><td>07:47</td><td>11:18</td><td>3h31m</td><td class="price">¥370</td><td>⭐方案首选</td></tr>
-      <tr><td>G1212</td><td>08:20</td><td>11:41</td><td>3h21m</td><td class="price">¥370</td><td></td></tr>
-      <tr><td>G736</td><td>11:30</td><td>15:22</td><td>3h52m</td><td class="price">¥370</td><td></td></tr>
-      <tr><td>G1252</td><td>11:35</td><td>15:13</td><td>3h38m</td><td class="price">¥370</td><td></td></tr>
-      <tr><td>G1220</td><td>14:31</td><td>17:10</td><td>2h39m</td><td class="price">¥409</td><td>⚡最快</td></tr>
-      <tr><td>G752</td><td>14:47</td><td>18:02</td><td>3h15m</td><td class="price">¥342</td><td></td></tr>
-      <tr><td>G804</td><td>15:35</td><td>18:52</td><td>3h17m</td><td class="price">¥325</td><td>💰最省</td></tr>
-      <tr><td>G802</td><td>16:29</td><td>19:46</td><td>3h17m</td><td class="price">¥325</td><td></td></tr>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>车次</th><th>区间</th><th>时刻</th><th>二等座</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">G8357</td><td>苏州南 → 德清</td><td>10:14 → 10:49</td><td>¥54</td><td>🚩 去程首选，早上不赶，到山脚正好午饭</td></tr>
+        <tr><td class="hl">G8358</td><td>德清 → 苏州南</td><td>18:27 → 19:09</td><td>¥54</td><td>🚩 返程首选，最后一天玩足一整个白天</td></tr>
+        <tr><td>G1520</td><td>德清 → 苏州南</td><td>16:46 → 17:20</td><td>¥62</td><td>备选：想早点到家就选这班</td></tr>
+      </tbody>
     </table>
-    <p class="train-note">苏州园区 → 苏州北：<b>地铁2号线直达约40分钟</b>（¥5）；或打车约24分钟（¥58）。早高峰请预留 <b>60 分钟</b>余量，G550 不等人。</p>
   </div>
 
-  <div class="train-wrap" id="train-back">
-    <table class="ttable">
-      <tr><th>车次</th><th>泰安发</th><th>到苏州北</th><th>历时</th><th>二等座</th><th>推荐</th></tr>
-      <tr><td>G2660</td><td>06:46</td><td>10:47</td><td>4h03m</td><td class="price">¥492</td><td></td></tr>
-      <tr><td>G936</td><td>07:24</td><td>10:55</td><td>3h34m</td><td class="price">¥492</td><td></td></tr>
-      <tr><td>G889</td><td>11:18</td><td>15:02</td><td>3h46m</td><td class="price">¥410</td><td></td></tr>
-      <tr class="rec"><td>G1708</td><td>13:00</td><td>16:44</td><td>3h47m</td><td class="price">¥492</td><td>⭐方案首选</td></tr>
-      <tr><td>G739</td><td>16:11</td><td>19:26</td><td>3h19m</td><td class="price">¥492</td><td>想多歇会儿选这趟</td></tr>
-      <tr><td>G805</td><td>18:44</td><td>22:45</td><td>4h07m</td><td class="price">¥492</td><td></td></tr>
-      <tr><td>G807</td><td>19:16</td><td>22:59</td><td>3h45m</td><td class="price">¥492</td><td></td></tr>
-    </table>
-    <p class="train-note">票价为公开票价快照，实际随折扣浮动；<b>12306 起售即抢，抢不到就每晚 22:00 蹲退票捡漏</b>。</p>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card">
+      <div class="card-bd">
+        <h4>🚌 方案一 · Y1 旅游专线（省钱）</h4>
+        <p>德清站出站就有，直达莫干山集散中心，约 70 分钟。<b>票价 ¥10</b>，班次跟高铁到站时间衔接，基本下了车就能走。缺点是山路开得慢，但反正我们不赶时间。</p>
+        <span class="price">¥10 · 约70分钟</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-bd">
+        <h4>🚕 方案二 · 打车/网约车（省时）</h4>
+        <p>德清站 → 莫干山集散中心或民宿门口，约 40 分钟，<b>¥40-70</b>。两人以上拼车其实和专线差不了多少钱，行李多或带老人的建议直接打车。</p>
+        <span class="price">¥40-70 · 约40分钟</span>
+      </div>
+    </div>
   </div>
 
-  <div class="city-traffic">
-    <div class="ct-card"><h4>🚌 K37路公交</h4><p>泰安高铁站 → 红门/泰前办事处，<span class="p">¥2</span>，约1小时，运营6:25-19:00。便宜但慢。</p></div>
-    <div class="ct-card"><h4>🚐 游3路旅游专线</h4><p>高铁泰安站 → 红门（经天外村），<span class="p">¥5</span>，约35分钟一班，运营7:10-19:30。</p></div>
-    <div class="ct-card"><h4>🚕 出租/网约车</h4><p>泰安站 → 红门约6.8km，<span class="p">¥25-30</span>，20分钟。人多拼车最划算。</p></div>
-    <div class="ct-card"><h4>🚐 天外村大巴</h4><p>天外村 → 中天门盘山公路，<span class="p">¥35</span>，方案B上山必坐，和索道票分开买。</p></div>
+  <div class="note">
+    <b>⚠️ 自驾/打车注意：</b>国庆期间<b>私家车禁止驶入核心景区</b>，一律停在莫干山集散中心，换乘景区接驳车上山（往返 ¥35）。打车的话直接跟师傅说"到集散中心"就行。景区巴士旺季运营时间 8:00-19:30。
   </div>
 </section>
 
-<!-- ================= 美食 ================= -->
 <section id="food">
   <div class="sec-head">
-    <span class="kicker">FOOD · 舌尖泰安</span>
-    <h2 class="serif">登完泰山，吃透泰安</h2>
-    <p>「游山不来品三美，泰山风光没赏全」</p>
+    <div class="sec-num">FOOD · 山野味道</div>
+    <h2>这趟旅行，笋就是主角</h2>
+    <p>莫干山一带的菜系就俩字：山货。笋、土鸡、溪鱼、野菜，做法朴实但鲜得很。以下按"来都来了必吃"排序。</p>
+  </div>
+  <div class="grid g3">
+    <div class="card">
+      <div class="card-img"><span class="card-tag">镇店必点</span><img src="img/local_food.jpg" alt="山家土菜"></div>
+      <div class="card-bd">
+        <h4>🍖 笋干烧肉</h4>
+        <p>本地笋干吸饱了五花肉的油，咸鲜下饭，山里家家会做。配一碗白米饭，能吃出"过年"的幸福感。</p>
+        <span class="price">人均 ¥50-70</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img"><span class="card-tag">时令限定</span><img src="img/dumplings.jpg" alt="煎饺小点"></div>
+      <div class="card-bd">
+        <h4>🥟 油焖笋 + 笋味小点</h4>
+        <p>秋季正当时。油焖笋浓油赤酱，一口下去脆嫩带甜；庾村的煎饺、笋丁包子适合当下午茶垫肚子。</p>
+        <span class="price">小食 ¥10-25/份</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img"><span class="card-tag">山泉好味</span><img src="img/lake_sunset.jpg" alt="湖光山色"></div>
+      <div class="card-bd">
+        <h4>🍲 土鸡汤 + 溪鱼</h4>
+        <p>走地鸡炖出来的汤金黄透亮，上桌先喝三碗；溪鱼红烧最香。晚上民宿里来一锅，白天走路的疲劳全消。</p>
+        <span class="price">土鸡锅 ¥98-138</span>
+      </div>
+    </div>
   </div>
 
-  <div class="food-banner">
-    <div class="fimg"><img src="img/tofu.jpg" alt="豆腐菜品"><span>泰山豆腐 · 泉水点的灵魂</span></div>
-    <div class="fimg"><img src="img/stew_pot.jpg" alt="热炖锅"><span>下山第一口热汤，胜过一切米其林</span></div>
-  </div>
-
-  <div class="food-grid">
-    <div class="food-card"><div class="pic"><img src="img/tofu.jpg" alt="三美豆腐"><span class="no">必吃 No.1</span></div><div class="body"><h4>泰山三美<span class="p">¥25-38</span></h4><p>白菜、豆腐、水——听着朴素，喝一口才懂什么叫"鲜到骨子里"。泰山泉水质纯，豆腐嫩而不老。</p><div class="eat">📍 红门/老县衙大院一带老鲁菜馆都有</div></div></div>
-    <div class="food-card"><div class="pic"><img src="img/stew_pot.jpg" alt="豆腐宴"><span class="no">宴席担当</span></div><div class="body"><h4>泰山豆腐宴<span class="p">人均¥40-80</span></h4><p>起源于帝王封禅祭祀的宴席，一桌豆腐做出上百种花样：三美豆腐、黄焖豆腐、豆腐脑、锅塌豆腐。</p><div class="eat">📍 泰山大剧院西侧主题餐厅 / 红门老店</div></div></div>
-    <div class="food-card"><div class="pic"><img src="img/food_stew.jpg" alt="红油炒鸡"><span class="no">本地人最爱</span></div><div class="body"><h4>红油炒鸡<span class="p">人均¥40</span></h4><p>麻辣鲜香、鸡肉紧实入味，泰安人日常下饭第一名。下山庆功宴就它了，配着煎饼卷着吃更香。</p><div class="eat">📍 山脚沿街炒鸡店遍地，选人多的准没错</div></div></div>
-    <div class="food-card"><div class="pic"><img src="img/mooncake.jpg" alt="中秋月饼"><span class="no">应景必带</span></div><div class="body"><h4>月饼 + 女儿茶<span class="p">¥30-60</span></h4><p>中秋在岱顶分月饼、泡一壶泰山女儿茶，是这趟旅程的灵魂仪式感。山顶冲泡记得用保温杯接的热水。</p><div class="eat">📍 市区超市购齐带上山，山顶买很贵</div></div></div>
-    <div class="food-card"><div class="pic"><img src="img/lantern_night.jpg" alt="夜市灯笼"><span class="no">市井小吃</span></div><div class="body"><h4>煎饼卷大葱<span class="p">¥5-10</span></h4><p>市级非遗。小米/玉米发酵摊制，卷上大葱抹甜面酱，豪爽管饱，夜爬前当干粮扛饿一整夜。</p><div class="eat">📍 红门起点摊位、通天街夜市</div></div></div>
-    <div class="food-card"><div class="pic"><img src="img/food_stew.jpg" alt="山珍"><span class="no">尝鲜款</span></div><div class="body"><h4>泰山赤鳞鱼<span class="p">时价较贵</span></h4><p>泰山独有珍稀鱼种，清代贡品，干炸后蘸花椒盐，外焦里嫩。预算宽裕尝一次，刺少无腥。</p><div class="eat">📍 正宗鲁菜馆需提前问有无</div></div></div>
-    <div class="food-card"><div class="pic"><img src="img/stew_pot.jpg" alt="范镇火烧"><span class="no">干粮神器</span></div><div class="body"><h4>范镇火烧<span class="p">¥3-5</span></h4><p>外酥内软的百年名吃，背着上山当干粮，冷了也香。比面包扛饿，比士力架便宜。</p><div class="eat">📍 泰安任意早餐店/超市</div></div></div>
-    <div class="food-card"><div class="pic"><img src="img/dawn_mountain.jpg" alt="山货"><span class="no">伴手礼</span></div><div class="body"><h4>肥城桃 & 山货<span class="p">¥10-30</span></h4><p>9月正是肥城桃（"群桃之冠"）上市季，还有泰山牙枣、东平湖咸鸭蛋、酱磨茄，回家伴手礼一站配齐。</p><div class="eat">📍 泰安站附近特产超市</div></div></div>
+  <div class="note">
+    <b>🍵 喝什么：</b>莫干黄芽是本地名茶，民宿院子里泡一壶就能消磨一下午；咖啡馆集中在庾村小镇，窑炉面包配拿铁是标配。想买茶叶手信的，去庾村集镇的老茶行比景区里便宜不少。
   </div>
 </section>
 
-<!-- ================= 装备 ================= -->
-<section id="gear">
+<section id="pack">
   <div class="sec-head">
-    <span class="kicker">GEAR CHECKLIST</span>
-    <h2 class="serif">装备清单 · 勾一项打包一项</h2>
-    <p>山顶体感温度比预报低 5℃，9月底岱顶凌晨只有 5-10℃</p>
+    <div class="sec-num">PACK · 行李清单</div>
+    <h2>出发前，对着这里打勾</h2>
+    <p>10月山上比山下低 5-7℃，昼夜温差超 10℃。核心思路：<b>洋葱式穿搭</b>——短袖打底、抓绒外套、防风冲锋衣，冷热都不慌。</p>
   </div>
-
-  <div class="gear-progress">
-    <span style="font-size:13px;color:var(--mist);min-width:64px">打包进度</span>
-    <div class="bar"><div class="fill" id="gearFill"></div></div>
-    <b id="gearPct">0 / 18 项</b>
-  </div>
-
-  <div class="gear-cols">
-    <div class="gear-cat">
-      <h3>🎒 夜爬核心装备</h3>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>强光头灯 + 备用电池</b>十八盘段照明不足，手机闪光灯撑不住全程</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>身份证（刷证入园）</b>进山闸机、检票、索道全靠它</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>登山杖</b>山下红门买 ¥5，省一半膝盖；下山比上山更需要它</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>保温杯</b>中天门有免费热水，山顶泡面泡茶全靠它</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>充电宝 20000mAh</b>头灯、手机导航、拍照，电量就是安全感</span></label>
-    </div>
-    <div class="gear-cat">
-      <h3>🧥 穿衣：三明治法</h3>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>内层 · 速干衣</b>纯棉T恤汗湿后冷得像穿冰衣，务必速干</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>中层 · 抓绒衣</b>爬时脱、停时穿，十八盘休息的90秒就能失温</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>外层 · 冲锋衣/防风外套</b>山顶等日出1.5小时的风，能把人吹透</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>厚长裤 + 帽子手套</b>头部散热最快，一顶毛线帽顶半件衣服</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>护膝（下山救星）</b>6660级台阶，下山冲击全在膝盖上</span></label>
-    </div>
-    <div class="gear-cat">
-      <h3>🍫 补给 & 小物</h3>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>水 ×2（1L）+ 电解质</b>山上矿泉水 ¥10+，山下一半价；汗流多了要补盐</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>高热量干粮</b>士力架 / 范镇火烧 / 压缩饼干，凌晨3点的糖分是意志力</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>月饼一盒 🥮</b>中秋在山顶分月饼，仪式感天花板</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>零钱 ¥200</b>军大衣押金100 + 泡面水补给，部分摊位信号差</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>一次性雨衣</b>秋季泰山天气多变，护住装备不湿身（¥2山下有售）</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>防晒 + 唇膏</b>凌晨山顶紫外线不弱，风大唇裂很常见</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>创可贴 & 肌肉喷雾</b>磨脚、抽筋，夜爬人手一份的救命稻草</span></label>
-      <label class="gear-item"><input type="checkbox" data-g><span class="box"></span><span class="txt"><b>垃圾袋</b>把垃圾带下山，圣山不留痕 ♻️</span></label>
-    </div>
+  <div class="progress"><i id="pack-bar"></i></div>
+  <p style="font-size:12.6px;color:var(--muted);margin-bottom:16px" id="pack-pct">已打包 0 / 14 件</p>
+  <div class="chk" id="pack-list">
+    <label><input type="checkbox"><span>🧥 防风冲锋衣 / 薄外套（夜凉必带）</span></label>
+    <label><input type="checkbox"><span>👕 短袖 T恤 ×2 + 长袖 ×2（洋葱式）</span></label>
+    <label><input type="checkbox"><span>🧦 厚袜子 + 毛巾</span></label>
+    <label><input type="checkbox"><span>👟 舒适防滑的运动鞋 / 徒步鞋</span></label>
+    <label><input type="checkbox"><span>🔋 充电宝（山里信号弱，掉电快）</span></label>
+    <label><input type="checkbox"><span>🌧️ 折叠伞或轻便雨衣（山雾说来就来）</span></label>
+    <label><input type="checkbox"><span>🧴 防晒霜 + 唇膏（高山紫外线强）</span></label>
+    <label><input type="checkbox"><span>🦟 驱蚊液（竹林蚊虫多）</span></label>
+    <label><input type="checkbox"><span>💊 肠胃药 / 创可贴（民宿在半山）</span></label>
+    <label><input type="checkbox"><span>🆔 身份证（购票、住宿都实名）</span></label>
+    <label><input type="checkbox"><span>🚄 车票截图 + 民宿订单（离线存好）</span></label>
+    <label><input type="checkbox"><span>📷 相机 / 手机存储空间留足</span></label>
+    <label><input type="checkbox"><span>☕ 保温杯（民宿接山泉水泡茶）</span></label>
+    <label><input type="checkbox"><span>📖 一本想读很久的书（躺平标配）</span></label>
   </div>
 </section>
 
-<!-- ================= 预算 ================= -->
-<section id="budget">
+<section id="money">
   <div class="sec-head">
-    <span class="kicker">BUDGET CALCULATOR</span>
-    <h2 class="serif">预算计算器 · 勾勾选选实时算</h2>
-    <p>按你的玩法增删项目，费用一目了然</p>
+    <div class="sec-num">MONEY · 预算算账</div>
+    <h2>一人四天三夜，不到两千块</h2>
+    <p>按"高铁 + 半山民宿"的标准算。觉得哪项不合适就取消勾选，金额实时更新——这就是你这次旅行的真实账本。</p>
   </div>
-  <div class="budget">
-    <h3 class="serif">💰 我的泰山行预算</h3>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b1" checked><span class="name">高铁往返（苏州北⇄泰安）<small>G550去 ¥370 + G1708回 ¥492</small></span></div><div class="num"><input type="number" value="862" data-v="862" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b2" checked><span class="name">泰山门票<small>旺季 ¥115 · 学生 ¥57 · 提前1-7天公众号预约</small></span></div><div class="num"><input type="number" value="115" data-v="115" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b3" checked><span class="name">军大衣租赁（方案A夜爬）<small>南天门 ¥30 + 押金¥100（可退）</small></span></div><div class="num"><input type="number" value="30" data-v="30" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b4"><span class="name">神憩宾馆山顶房（方案B）<small>中秋约 ¥1299，双人摊薄约 ¥650/人</small></span></div><div class="num"><input type="number" value="650" data-v="650" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b5" checked><span class="name">索道 + 天外村大巴（下山）<small>中天门索道 ¥100 + 大巴 ¥35</small></span></div><div class="num"><input type="number" value="135" data-v="135" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b6" checked><span class="name">餐饮（2天4顿）<small>豆腐宴 + 炒鸡 + 山上泡面 × N</small></span></div><div class="num"><input type="number" value="180" data-v="180" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b7" checked><span class="name">补给采购<small>头灯+登山杖+水粮雨衣，山下买齐</small></span></div><div class="num"><input type="number" value="60" data-v="60" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b8" checked><span class="name">当地交通<small>公交/打车 往返红门+天外村</small></span></div><div class="num"><input type="number" value="40" data-v="40" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-row"><div class="l"><input type="checkbox" id="b9"><span class="name">伴手礼<small>女儿茶 / 肥城桃 / 火烧</small></span></div><div class="num"><input type="number" value="80" data-v="80" disabled><span class="unit">元 / 人</span></div></div>
-    <div class="b-total"><span>预计总花费（1人）</span><b>¥<span id="bTotal">1422</span><small> 起</small></b></div>
-    <p style="font-size:12px;color:var(--mist);text-align:center;margin-top:14px">※ 押金可退未计入；多人同行分摊房费更省</p>
+  <div id="bd-list">
+    <div class="bd-row"><input type="checkbox" checked data-v="108"><span class="nm">🚄 高铁往返（G8357 + G8358，二等座）</span><span class="vl">¥108</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="20"><span class="nm">🚌 德清站 ↔ 集散中心（Y1 往返）</span><span class="vl">¥20</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="35"><span class="nm">🚐 景区接驳车（往返）</span><span class="vl">¥35</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="80"><span class="nm">🎫 大门票（3天有效，可多次入园）</span><span class="vl">¥80</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="1080"><span class="nm">🏡 半山民宿 ×3 晚（按 ¥360/晚，双人拼房口径）</span><span class="vl">¥1080</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="400"><span class="nm">🍜 三餐 ×4 天（含一顿土鸡锅）</span><span class="vl">¥400</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="100"><span class="nm">🛍️ 手信（笋干 + 莫干黄芽茶）</span><span class="vl">¥100</span></div>
+    <div class="bd-row"><input type="checkbox" data-v="150"><span class="nm">☕ 咖啡馆 + 窑炉面包下午茶（可选）</span><span class="vl">¥150</span></div>
+    <div class="bd-row"><input type="checkbox" data-v="70"><span class="nm">🚕 打车机动金（可选，行李多时用）</span><span class="vl">¥70</span></div>
+  </div>
+  <div class="bd-total">
+    <span>勾选合计（一人）</span>
+    <b id="bd-sum">¥1823</b>
+  </div>
+  <div class="note">
+    <b>💡 省钱位：</b>两人同行民宿按整间算更划算（¥600-900/晚 ÷2）；10月3日进山、10月6日返程刚好避开首尾高峰，房价也比 1-2 日便宜一档。学生证、60 岁以上老人门票有优惠，记得带证件。
   </div>
 </section>
 
-<!-- ================= 贴士 ================= -->
 <section id="tips">
   <div class="sec-head">
-    <span class="kicker">TIPS · 避坑指南</span>
-    <h2 class="serif">特别注意 · 十条铁律</h2>
-    <p>点开看详情，条条都是前人踩过的坑</p>
+    <div class="sec-num">TIPS · 避坑贴士</div>
+    <h2>把坑提前踩完，你只管躺</h2>
+    <p>国庆出行，信息差就是体验差。这几条是踩过坑的人总结出来的，点开看详情。</p>
   </div>
-  <div class="tips">
-    <div class="tip"><div class="t-head"><span class="no">1</span><h4>门票必须提前预约，没有现场票！</h4><span class="lv must">必看</span><span class="arr">▾</span></div><div class="t-body"><div class="in">泰山实行全网实名预约制，<b>唯一官方渠道是「泰山景区」微信公众号</b>（认准主体"泰山风景名胜区管理委员会"，别进山寨号），可提前 <b>1-7天</b> 预约。中秋是全年最挤的档期之一，<b>建议9月19日（提前7天开售日）零点定闹钟开抢</b>。夜爬要选 <b>16:00-23:59 时段</b>，这个时段的票最先售罄。抢不到就每天 22:00 后刷退票捡漏。免票人群（65岁+老人、1.2m以下儿童）也要约 <b>0元票</b>。</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">2</span><h4>高铁票同样要拼手速</h4><span class="lv must">必看</span><span class="arr">▾</span></div><div class="t-body"><div class="in">中秋前一天的 G550（07:47）是黄金班次，12306 <b>开售即抢</b>。技巧：① 12306 App 设置<b>自动抢票+候补</b>；② 候补成功率远高于第三方加速包；③ 每晚 22:00 后是退票高峰，蹲一晚基本能捡到。备选：张家港站 13:52 的 G888（¥354）曲线救国，苏州园区过去也方便。</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">3</span><h4>山顶很冷，穿错了会失温</h4><span class="lv strong">重要</span><span class="arr">▾</span></div><div class="t-body"><div class="in">9月底泰安市区白天 25℃，但<b>岱顶凌晨只有 5-10℃</b>，加上等日出时静止不动 1.5 小时+山风，体感接近 0℃。三明治穿衣法（速干+抓绒+冲锋衣）+ 毛线帽手套，<b>别穿纯棉T恤</b>，汗湿后贴身冰凉。实在冷了租军大衣，但记住：只在南天门以后租！</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">4</span><h4>十八盘不超车、不拍照、不看手机</h4><span class="lv strong">重要</span><span class="arr">▾</span></div><div class="t-body"><div class="in">凌晨 2-4 点的紧十八盘，人流密度最高、坡度最陡（70°）、光线最差。<b>扶栏杆匀速走，停下来就靠边</b>，每年国庆中秋都有人在这儿崴脚摔伤。手机导航、自拍统统等过了南天门再说。队伍里摔倒会连环撞，照顾好自己也照顾好前后的人。</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">5</span><h4>看日出：提前90分钟占位</h4><span class="lv strong">重要</span><span class="arr">▾</span></div><div class="t-body"><div class="in">最佳机位依次是 <b>拱北石（探海石）> 日观峰 > 玉皇顶东侧</b>。中秋档期 04:00 后好位置基本没缝了，<b>建议 04:30 前到位</b>。占位时注意：不要站在栏杆外侧石头上，年年都有翻下去的；日出后 20 分钟是"金色泰山"光线最好的时候，别看完就走。</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">6</span><h4>山上的钱要花在刀刃上</h4><span class="lv tip2">省钱</span><span class="arr">▾</span></div><div class="t-body"><div class="in">山顶矿泉水 ¥10、泡面 ¥15、烤肠 ¥8 起步——但这是挑山工一步步背上来的，贵有贵的道理，也别砍价为难人家。省钱姿势：<b>保温杯接中天门免费热水、干粮山下买、水带够2瓶</b>。中天门以上手机信号偶尔飘，备点零钱。</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">7</span><h4>这些情况，别硬爬</h4><span class="lv must">安全</span><span class="arr">▾</span></div><div class="t-body"><div class="in">夜爬是高强度运动，<b>心脏病、高血压、哮喘患者、低龄儿童、体力差的老人不建议</b>。出发前查「泰山景区」公众号的天气公告：中雨/雷电/大风天气景区会关闭夜爬通道，别赌。雾天大概率看不到日出，心态放平——云海日出是缘分，中秋的月亮才是这次的主角。</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">8</span><h4>行李寄存 & 下山后</h4><span class="lv tip2">实用</span><span class="arr">▾</span></div><div class="t-body"><div class="in">红门游客中心及沿线商铺可寄存行李（¥10-20/件），夜爬版全程不需要订 25 日晚的房，<b>下山后取行李直接吃饭-上车-回家</b>，一气呵成。想洗个澡再走的，红门附近有 24h 淋浴钟点房（¥30-50），一身汗上高铁真的会社死。</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">9</span><h4>岱庙别跳过</h4><span class="lv tip2">实用</span><span class="arr">▾</span></div><div class="t-body"><div class="in">很多人直奔泰山跳过岱庙，血亏。它是<b>历代帝王封禅的起点</b>、"泰山神的地宫"，与北京故宫、曲阜孔庙并称中国三大宫殿式建筑群。天贶殿宋代壁画《泰山神启跸回銮图》、汉武帝手植柏、秦二世刻石——逛完再爬山，你脚下每一级台阶都有了千年context。</div></div></div>
-    <div class="tip"><div class="t-head"><span class="no">10</span><h4>中秋夜的隐藏彩蛋</h4><span class="lv tip2">浪漫</span><span class="arr">▾</span></div><div class="t-body"><div class="in">满月的月光+夜爬的头灯，是泰山一年里最梦幻的组合。<b>过中天门后回头望</b>：泰安城万家灯火在脚下铺开，月亮悬在正前方——这个瞬间，值回整张车票。记得在拱北石等日出时，跟身边萍水相逢的夜爬人分一块月饼，来年中秋你们都会记得彼此。</div></div></div>
+  <div class="acc" id="acc">
+    <div class="acc-item">
+      <div class="acc-h"><span class="ico">🕐</span>错峰进山的时间密码<span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>人潮集中在 <b>9:00-11:00</b> 的集散中心和大巴站。两个黄金窗口：<b>8:00 前到集散中心</b>（大巴排队基本不超过 15 分钟），或 <b>14:00 后进山</b>（团队游下午陆续撤了，景区肉眼可见地清净）。我们方案里都按这个排的。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h"><span class="ico">🎫</span>门票一次买对，别重复花钱<span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>大门票 <b>¥80 / 3天有效</b>，期间可多次入园——千万别每天单独买。学生、60 岁以上凭证件半价或免票。线上提前买好，扫码入园不用排队取票。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h"><span class="ico">🚗</span>自驾的都堵在山下了<span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>国庆核心景区<b>私家车禁入</b>，导航"莫干山旅游集散中心"停车换乘。山下停车场旺季一位难求，排队 1 小时很常见。这也是我们选高铁的原因——德清站出来 Y1 直达，全程不用碰方向盘。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h"><span class="ico">📵</span>山里信号与充电的现实<span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>核心景区大部分区域有 4G，但<b>竹海深处和部分民宿露台信号很弱</b>——这不是 bug，是度假的一部分。提前下载好离线地图和剧集；充电宝带 1 万毫安以上的，山里气温低掉电快。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h"><span class="ico">🍲</span>吃饭别只认网红店<span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>庾村和荫山街的网红店国庆排队 1 小时起。山里农家乐味道不输、价格便宜三分之一，问民宿老板"你家常去哪家"准没错。午餐 11:30 前或 13:00 后到店，基本不用等。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h"><span class="ico">🌫️</span>起雾和下雨是常态<span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>莫干山 10 月多晨雾和阵雨，<b>这正是它的魅力</b>——雾里竹林比晴天更出片。装备上备轻便雨衣即可，别让天气预报打乱节奏；雨后 1-2 小时是拍瀑布的最佳时机（水量大）。</p></div></div>
+    </div>
   </div>
 </section>
 
-<!-- ================= 关键数据 ================= -->
-<section id="facts">
+<section id="data">
   <div class="sec-head">
-    <span class="kicker">KEY FACTS</span>
-    <h2 class="serif">一屏看懂关键数据</h2>
+    <div class="sec-num">DATA · 关键数据</div>
+    <h2>一张图记住这趟旅行</h2>
+    <p>把最要紧的数字都放这了，出发前扫一眼就够。</p>
   </div>
-  <div class="fact-grid">
-    <div class="fact"><div class="v">115<small>元</small></div><div class="k">门票（学生半价57）</div></div>
-    <div class="fact"><div class="v">1545<small>m</small></div><div class="k">玉皇顶海拔</div></div>
-    <div class="fact"><div class="v">6660<small>级</small></div><div class="k">红门线台阶总数</div></div>
-    <div class="fact"><div class="v">06:05</div><div class="k">9月26日日出时刻</div></div>
-    <div class="fact"><div class="v">6<small>小时</small></div><div class="k">夜爬常规登顶耗时</div></div>
-    <div class="fact"><div class="v">5~10<small>℃</small></div><div class="k">岱顶凌晨气温</div></div>
-    <div class="fact"><div class="v">100<small>元</small></div><div class="k">中天门索道单程</div></div>
-    <div class="fact"><div class="v">7<small>天</small></div><div class="k">门票提前预约窗口</div></div>
+  <div class="kv">
+    <div class="kv-c"><div class="n">10.3-6</div><div class="l">行程日期</div></div>
+    <div class="kv-c"><div class="n">35min</div><div class="l">苏州南→德清 高铁</div></div>
+    <div class="kv-c"><div class="n">¥80</div><div class="l">大门票·3天有效</div></div>
+    <div class="kv-c"><div class="n">15-22℃</div><div class="l">白天温度·带外套</div></div>
+    <div class="kv-c"><div class="n">¥35</div><div class="l">景区接驳车往返</div></div>
+    <div class="kv-c"><div class="n">8点前</div><div class="l">进山黄金时间</div></div>
+    <div class="kv-c"><div class="n">¥1823</div><div class="l">一人全程预算</div></div>
+    <div class="kv-c"><div class="n">0</div><div class="l">需要早起的次数</div></div>
   </div>
-  <div class="gal" style="margin-top:34px">
-    <img src="img/cloud_sea.jpg" alt="云海" class="lb" data-cap="若有机缘，岱顶云海比日出更震撼">
-    <img src="img/dawn_mountain.jpg" alt="黎明群山" class="lb" data-cap="黎明的光从山脊线漫上来">
-    <img src="img/mist_mountains.jpg" alt="晨雾" class="lb" data-cap="下山路上的晨雾山谷">
-    <img src="img/mid_autumn.jpg" alt="中秋月" class="lb" data-cap="中秋，是月亮一年来离我们最近的夜晚">
+
+  <div style="margin-top:34px">
+    <div class="sec-num" style="margin-bottom:14px">GALLERY · 画面速览</div>
+    <div class="gal">
+      <img src="img/bamboo_forest.jpg" alt="竹海">
+      <img src="img/misty_forest.jpg" alt="雾中林">
+      <img src="img/waterfall.jpg" alt="剑池瀑布">
+      <img src="img/autumn_park.jpg" alt="秋色">
+      <img src="img/hillside_stay.jpg" alt="山居民宿">
+      <img src="img/lake_sunset.jpg" alt="湖畔日落">
+    </div>
   </div>
 </section>
+</main>
 
 <footer>
-  <div class="fm serif">海上生明月 · 天下泰山顶</div>
-  <p>本攻略信息综合自12306、携程、泰山风景名胜区管委会等公开渠道（2026年9月快照），车次票价、开放时段以出行当日官方发布为准。</p>
-  <p style="margin-top:8px;color:rgba(244,208,111,.6)">— 祝你和月亮，都在中秋如约而至 —</p>
+  🎋 莫干山国庆慢游 · 苏州园区出发 · 2026.10.3-10.6<br>
+  高铁 35 分钟，竹海 4 天 3 夜，一场不用请假的松弛假期<br>
+  <span style="opacity:.6">手制于 Operit · 慢慢来，比较快</span>
 </footer>
 
-<button class="totop" id="totop">↑</button>
-
-<div class="lightbox" id="lightbox"><span class="close" id="lbClose">✕</span><img id="lbImg" src=""><div class="cap" id="lbCap"></div></div>
+<div class="lb" id="lb"><img id="lb-img" src="" alt=""></div>
+<button id="top" aria-label="回到顶部">↑</button>
 
 <script>
-/* ===== 倒计时：G550 发车 2026-09-25 07:47 ===== */
-const target=new Date('2026-09-25T07:47:00+08:00').getTime();
+(function(){
+"use strict";
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+/* ===== 倒计时：2026-10-03 10:14 发车 ===== */
+var goTime=new Date("2026-10-03T10:14:00+08:00").getTime();
 function cd(){
-  let t=target-Date.now();
-  if(t<0){document.getElementById('cd').innerHTML='<div class="cd-box" style="min-width:200px"><b style="font-size:18px">已在路上 · 一路顺风 🌙</b></div>';return}
-  const d=Math.floor(t/864e5),h=Math.floor(t%864e5/36e5),m=Math.floor(t%36e5/6e4),s=Math.floor(t%6e4/1e3);
-  cd2('cd-d',d);cd2('cd-h',h);cd2('cd-m',m);cd2('cd-s',s);
+  var d=goTime-Date.now();
+  if(d<=0){$("#cd-txt").textContent="出发啦！竹海见 🎋";$$(".cd-num").forEach(function(n){n.textContent="0"});return}
+  var s=Math.floor(d/1000);
+  $("#cd-d").textContent=Math.floor(s/86400);
+  $("#cd-h").textContent=Math.floor(s%86400/3600);
+  $("#cd-m").textContent=Math.floor(s%3600/60);
+  $("#cd-s").textContent=s%60;
+  $("#cd-txt").textContent="距离 G8357 发车 · 收拾行李倒计时";
+  setTimeout(cd,1000);
 }
-function cd2(id,v){document.getElementById(id).textContent=String(v).padStart(2,'0')}
-cd();setInterval(cd,1000);
+cd();
 
-/* ===== 方案切换 ===== */
-const planBtns=document.querySelectorAll('.plan-switch button');
-planBtns.forEach(b=>b.addEventListener('click',()=>{
-  planBtns.forEach(x=>x.classList.remove('on'));b.classList.add('on');
-  document.querySelectorAll('.plan-box').forEach(p=>p.classList.remove('show'));
-  document.getElementById('plan-'+b.dataset.plan).classList.add('show');
-}));
-
-/* ===== 车次tab ===== */
-const tBtns=document.querySelectorAll('.train-tabs button');
-tBtns.forEach(b=>b.addEventListener('click',()=>{
-  tBtns.forEach(x=>x.classList.remove('on'));b.classList.add('on');
-  document.querySelectorAll('.train-wrap').forEach(p=>p.classList.remove('show'));
-  document.getElementById('train-'+b.dataset.train).classList.add('show');
-}));
-
-/* ===== 时间轴手风琴 ===== */
-document.querySelectorAll('.tl-head').forEach(h=>h.addEventListener('click',()=>{
-  const item=h.parentElement,body=item.querySelector('.tl-body');
-  const open=item.classList.contains('open');
-  document.querySelectorAll('.tl-item').forEach(i=>{i.classList.remove('open');i.querySelector('.tl-body').style.maxHeight=0});
-  if(!open){item.classList.add('open');body.style.maxHeight=body.scrollHeight+80+'px'}
-}));
-
-/* ===== 装备清单 localStorage ===== */
-const gearItems=document.querySelectorAll('[data-g]');
-let gearState={};
-try{gearState=JSON.parse(localStorage.getItem('taishan_gear')||'{}')}catch(e){}
-gearItems.forEach((it,i)=>{
-  it.checked=!!gearState[i];
-  it.addEventListener('change',()=>{
-    gearState[i]=it.checked;
-    localStorage.setItem('taishan_gear',JSON.stringify(gearState));
-    updGear();
+/* ===== Tab 切换 ===== */
+$$(".tab").forEach(function(t){
+  t.addEventListener("click",function(){
+    $$(".tab").forEach(function(x){x.classList.remove("on")});
+    t.classList.add("on");
+    $$(".panel").forEach(function(p){p.classList.remove("on")});
+    $("#"+t.dataset.t).classList.add("on");
   });
 });
-function updGear(){
-  const total=gearItems.length,done=[...gearItems].filter(x=>x.checked).length;
-  document.getElementById('gearFill').style.width=(done/total*100)+'%';
-  document.getElementById('gearPct').textContent=done+' / '+total+' 项';
-}
-updGear();
 
-/* ===== 预算计算器 ===== */
-const bRows=document.querySelectorAll('.budget .b-row');
-function calc(){
-  let sum=0;
-  bRows.forEach(r=>{
-    const cb=r.querySelector('input[type=checkbox]'),num=r.querySelector('input[type=number]');
-    if(cb.checked)sum+=parseFloat(num.value||0);
+/* ===== 手风琴 ===== */
+$$(".acc-h").forEach(function(h){
+  h.addEventListener("click",function(){
+    var item=h.parentElement,b=item.querySelector(".acc-b"),open=item.classList.contains("open");
+    $$(".acc-item.open").forEach(function(o){o.classList.remove("open");o.querySelector(".acc-b").style.maxHeight=null});
+    if(!open){item.classList.add("open");b.style.maxHeight=b.scrollHeight+"px"}
   });
-  document.getElementById('bTotal').textContent=sum.toLocaleString();
-}
-bRows.forEach(r=>{
-  r.querySelector('input[type=checkbox]').addEventListener('change',calc);
-  r.querySelector('input[type=number]').addEventListener('input',calc);
 });
-calc();
-
-/* ===== 贴士手风琴 ===== */
-document.querySelectorAll('.tip .t-head').forEach(h=>h.addEventListener('click',()=>{
-  const tip=h.parentElement,body=tip.querySelector('.t-body');
-  if(tip.classList.contains('open')){tip.classList.remove('open');body.style.maxHeight=0}
-  else{tip.classList.add('open');body.style.maxHeight=body.scrollHeight+20+'px'}
-}));
 
 /* ===== 灯箱 ===== */
-const lb=document.getElementById('lightbox');
-document.querySelectorAll('.lb').forEach(img=>img.addEventListener('click',()=>{
-  document.getElementById('lbImg').src=img.src;
-  document.getElementById('lbCap').textContent=img.dataset.cap||'';
-  lb.classList.add('show');
-}));
-document.getElementById('lbClose').addEventListener('click',()=>lb.classList.remove('show'));
-lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('show')});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('show')});
-
-/* ===== 导航高亮 & 返回顶部 ===== */
-const secs=document.querySelectorAll('section[id]');
-const navLinks=document.querySelectorAll('nav a');
-window.addEventListener('scroll',()=>{
-  let cur='';
-  secs.forEach(s=>{if(scrollY>=s.offsetTop-100)cur=s.id});
-  navLinks.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+cur));
-  document.getElementById('totop').classList.toggle('show',scrollY>600);
+var lb=$("#lb");
+$$(".gal img").forEach(function(im){
+  im.addEventListener("click",function(){$("#lb-img").src=im.src;lb.classList.add("on")});
 });
-document.getElementById('totop').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+lb.addEventListener("click",function(){lb.classList.remove("on")});
+
+/* ===== 行李清单进度 ===== */
+function packUpd(){
+  var bs=$$("#pack-list input"),done=bs.filter(function(b){return b.checked}).length;
+  $("#pack-bar").style.width=(done/bs.length*100)+"%";
+  $("#pack-pct").textContent="已打包 "+done+" / "+bs.length+" 件"+(done===bs.length?" · 全齐了，出发！🎉":"");
+}
+$$("#pack-list input").forEach(function(b){b.addEventListener("change",packUpd)});
+packUpd();
+
+/* ===== 预算计算 ===== */
+function bdUpd(){
+  var sum=0;
+  $$("#bd-list input:checked").forEach(function(b){sum+=+b.dataset.v});
+  $("#bd-sum").textContent="¥"+sum;
+}
+$$("#bd-list input").forEach(function(b){b.addEventListener("change",bdUpd)});
+bdUpd();
+
+/* ===== 回到顶部 ===== */
+var topBtn=$("#top");
+window.addEventListener("scroll",function(){
+  topBtn.classList.toggle("on",window.scrollY>600);
+  /* nav 高亮 */
+  var cur="";
+  $$("main section").forEach(function(sec){
+    if(window.scrollY>=sec.offsetTop-120)cur=sec.id;
+  });
+  $$("nav a.nl").forEach(function(a){a.classList.toggle("act",a.getAttribute("href")==="#"+cur)});
+},{passive:true});
+topBtn.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+})();
 </script>
 </body>
 </html>
