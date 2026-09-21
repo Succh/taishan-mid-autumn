@@ -55,10 +55,10 @@ ul,ol{margin:6px 0;padding-left:1.3em}
 
 /* ---------- 首屏「旅程海报」 ---------- */
 .hero{position:relative;overflow:hidden;border-radius:26px;color:#fff;box-shadow:var(--shadow-lift);
-  background:linear-gradient(140deg,#0b5f57 0%,#0f8f81 48%,#3aa998 72%,#c0812a 135%)}
-.hero-bg{position:absolute;inset:0;opacity:.28;pointer-events:none}
+  background:linear-gradient(140deg,rgba(11,95,87,.88) 0%,rgba(15,143,129,.82) 48%,rgba(58,169,152,.78) 72%,rgba(192,129,42,.75) 135%),url(assets/hero.jpg) center/cover no-repeat}
+.hero-bg{position:absolute;inset:0;opacity:.10;pointer-events:none}
 .hero-bg svg{width:100%;height:100%}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 110%,rgba(255,255,255,.18),transparent 60%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,52,51,.42) 0%,rgba(8,52,51,.18) 40%,rgba(8,52,51,.55) 100%),radial-gradient(600px 300px at 85% 110%,rgba(255,255,255,.08),transparent 60%);pointer-events:none}
 .hero-inner{position:relative;padding:30px 26px 26px;display:grid;gap:14px}
 .kicker{font-size:12.5px;letter-spacing:.14em;opacity:.85;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .kicker .dot{width:6px;height:6px;border-radius:50%;background:#fff;opacity:.6}
@@ -356,6 +356,14 @@ footer.foot .attr{display:inline-block;font-weight:700;color:var(--teal-ink);bor
   details>*:not(summary){display:block}
   a{border:0;color:#000}
 }
+
+/* ---------- 打卡点配图 ---------- */
+.gallery-photo{position:relative;overflow:hidden;border-radius:12px;margin-bottom:10px;background:#efe8dc}
+.gallery-photo img{display:block;width:100%;height:120px;object-fit:cover;object-position:center;transition:transform .5s var(--ease)}
+.tile:hover .gallery-photo img{transform:scale(1.06)}
+.gallery-photo .caption{position:absolute;left:8px;bottom:6px;font-size:11px;color:#fff;background:rgba(0,0,0,.5);padding:2px 8px;border-radius:4px;backdrop-filter:blur(4px);letter-spacing:.02em}
+@media(max-width:640px){.gallery-photo img{height:100px}}
+
 </style>
 </head>
 <body data-trip="2026-10-06-moganshan-2d" data-version="2">
@@ -394,31 +402,37 @@ footer.foot .attr{display:inline-block;font-weight:700;color:var(--teal-ink);bor
   <h2>📸 江南瑶坞 · 5 大打卡点</h2>
   <div class="tiles" style="gap:14px">
     <div class="tile" style="background:linear-gradient(160deg,#fff,#dff1ed);border-color:rgba(15,143,129,.3)">
+      <div class="gallery-photo"><img src="assets/lake.jpg" alt="🏞️ 瑶坞水库" loading="lazy"><span class="caption">瑶坞水库 · 翡翠绿水体</span></div>
       <span class="lab">🏞️ 瑶坞水库</span>
       <span class="val" style="font-size:16px;margin-top:6px">「江南小九寨」翡翠绿水体，1100m 索道上下都能俯瞰</span>
     </div>
     <div class="tile" style="background:linear-gradient(160deg,#fff,#fbeedc);border-color:rgba(192,129,42,.3)">
+      <div class="gallery-photo"><img src="assets/path.jpg" alt="🌉 玻璃栈道" loading="lazy"><span class="caption">莫干山步道 · 徒步观景</span></div>
       <span class="lab">🌉 玻璃栈道</span>
       <span class="val" style="font-size:16px;margin-top:6px">200m 悬空透明栈道，山顶观景最佳机位，10 月光线最美</span>
     </div>
     <div class="tile" style="background:linear-gradient(160deg,#fff,#fbe6e0);border-color:rgba(184,80,106,.3)">
+      <div class="gallery-photo"><img src="assets/waterfall.jpg" alt="🎢 云端飞车" loading="lazy"><span class="caption">山水之间 · 漂流/滑道</span></div>
       <span class="lab">🎢 云端飞车</span>
       <span class="val" style="font-size:16px;margin-top:6px">滑道 5 分钟一趟，体力消耗小，适合亲子</span>
     </div>
     <div class="tile" style="background:linear-gradient(160deg,#fff,#ebf1dc);border-color:rgba(111,143,42,.3)">
+      <div class="gallery-photo"><img src="assets/bamboo.jpg" alt="🚣 龙吟漂流" loading="lazy"><span class="caption">竹林秘境 · 全程幽静</span></div>
       <span class="lab">🚣 龙吟漂流</span>
       <span class="val" style="font-size:16px;margin-top:6px">全程约 60 分钟，会湿；安排在最后一项便于回民宿换</span>
     </div>
     <div class="tile" style="background:linear-gradient(160deg,#fff,#f9e3e9);border-color:rgba(184,80,106,.3)">
+      <div class="gallery-photo"><img src="assets/hero.jpg" alt="🌌 天空之桥" loading="lazy"><span class="caption">莫干山远眺 · 云海晨雾</span></div>
       <span class="lab">🌌 天空之桥</span>
       <span class="val" style="font-size:16px;margin-top:6px">山顶网红打卡，10 月晨雾最上镜；DAY2 上午补</span>
     </div>
     <div class="tile" style="background:linear-gradient(160deg,#fff,#e3f2e8);border-color:rgba(47,125,79,.3)">
+      <div class="gallery-photo"><img src="assets/villa.jpg" alt="🏡 莫瑶民宿" loading="lazy"><span class="caption">莫干山民宿 · 庭院夜色</span></div>
       <span class="lab">🏡 莫瑶民宿</span>
       <span class="val" style="font-size:16px;margin-top:6px">大瑶村里，院子可看夜景；性价比高，含庭院晚餐</span>
     </div>
   </div>
-  <p class="small" style="margin-top:12px">参考图：小红书搜「江南瑶坞」/「瑶坞水库」/「莫干山玻璃栈道」查看实拍；抖音搜「江南瑶坞度假区」看短视频。</p>
+  <p class="small" style="margin-top:12px">真实场景参考图（Wikimedia Commons 授权）已内嵌在上方卡片；更多实拍搜小红书「江南瑶坞」/「瑶坞水库」/「莫干山玻璃栈道」，抖音「江南瑶坞度假区」看短视频。</p>
 </section>
 
 <div class="notice info" data-reveal><strong>条件式方案。</strong>标「待你预约 / 待订 / 待确认」的事项完成后才能照着走；每一项的截止时间和没做成怎么办都在 <a href="#checklist">出发前清单</a>。<div class="must"><span>⏰ 2026-09-28 · 12306 核实 G8357/G1520 车次并出票（10/7 是假期最后一天，抢票压力大）</span><span>⏰ 2026-09-25 · 订莫瑶民宿 1 晚（10/6），确认 14:00 前入住 + 含早晚餐</span><span>⏰ 2026-09-30 · 江南瑶坞通票预订（含索道+玻璃栈道+云端飞车+龙吟漂流+天空之桥）</span></div></div>
